@@ -6,7 +6,7 @@
 
 - [x] T01: scripts/manifest.ts の validateManifest を単体テストから作る (AC-01, AC-13)
 - [x] T02: scripts/build.ts（検証 → dist/ コピー → apps.json / precache.js 生成）と build.spec、Playwright 設定、check:platform (AC-13)
-- [ ] T03: sdk/storage.js の createStorage をメモリ backend の単体テストから作り、IndexedDB backend と storage.spec を足す (AC-03, AC-04)
+- [x] T03: sdk/storage.js の createStorage をメモリ backend の単体テストから作り、IndexedDB backend と storage.spec を足す (AC-03, AC-04)
 - [ ] T04: sdk/ui.js と sdk.css（toast / confirm / ヘッダー / ダーク対応の CSS 変数）、sdk/sdk.js の mountApp (AC-02, AC-06, AC-12)
 - [ ] T05: sdk/notify.js の channel を単体テストから作り、send を実装する (AC-07)
 - [ ] T06: sdk/camera.js の fitSize を単体テストから作り、takePhoto を実装する (AC-08)

@@ -28,7 +28,7 @@ platform/
 - 評価課題のワークスペースには `sdk/` だけをコピーする。SW やランチャーがなくても `mountApp` は失敗しない
 
 ## データモデル
-- IndexedDB：DB 名 `pwa-sdd`、ストア `kv`。キーは `"<appId>/<key>"`（例 `demo/memo`）、値はそのまま（構造化複製。Blob 可）
+- IndexedDB：DB 名 `pwa-sdd`、ストア `kv`。キーは `"<appId>/<key>"`（例 `demo/memo`）、値は構造化複製。Blob は `{ __blob, type, data: ArrayBuffer }` に変換して保存し、読むときに戻す（WebKit は環境により Blob を直接保存できない）
   - `keys()` と全件取得は、接頭辞 `"<appId>/"` の範囲検索で行う
   - appId は `location.pathname` の `/apps/<id>/` から取る。取れないとき（ランチャー）は `mountApp` 以外の storage 利用を例外にする
 - バックアップ JSON：`{ "format": "pwa-backup", "version": 1, "exportedAt": "ISO日時", "apps": { "demo": { "memo": "牛乳", "photo": { "$blob": "data:image/jpeg;base64,…" } } } }`
