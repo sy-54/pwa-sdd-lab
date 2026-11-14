@@ -14,6 +14,7 @@
 - `npm run lint:sdd -- <specsDir> --phase <spec|design|tasks|e2e|feedback> [--tests <e2eDir>]`
 - `npm run harness -- --tasks T00,T01 --models sonnet,haiku --runs 2 --parallel 2`
 - `npm run summary`：`results/summary.md` を再生成
+- `npm run regrade -- T01`：隠しE2E を直した後、既存の実行を採点し直す
 
 ## 規約
 - 機能追加は SDD フローで行う（`sdd/SKILL.md`）。spec・design・改訂履歴は人間（Shigeru）の承認を得てから次へ進む
