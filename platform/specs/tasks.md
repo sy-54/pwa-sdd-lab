@@ -10,7 +10,7 @@
 - [x] T04: sdk/ui.js と sdk.css（toast / confirm / ヘッダー / ダーク対応の CSS 変数）、sdk/sdk.js の mountApp (AC-02, AC-06, AC-12)
 - [x] T05: sdk/notify.js の channel を単体テストから作り、send を実装する (AC-07)
 - [x] T06: sdk/camera.js の fitSize を単体テストから作り、takePhoto を実装する (AC-08)
-- [ ] T07: apps/demo（メモ保存・トースト・通知・写真）と demo.spec (AC-03, AC-06, AC-07, AC-08)
+- [x] T07: apps/demo（メモ保存・トースト・通知・写真）と demo.spec (AC-03, AC-06, AC-07, AC-08)
 - [ ] T08: ランチャーの一覧・空表示・起動と戻る、manifest.webmanifest とアイコン、launcher.spec (AC-01, AC-02, AC-14)
 - [ ] T09: launcher/backup.js を単体テストから作り、設定パネルのエクスポート／インポートと backup.spec (AC-09, AC-10, AC-11)
 - [ ] T10: theme.spec でランチャーと demo のダーク表示を確認し、不足を直す (AC-12)

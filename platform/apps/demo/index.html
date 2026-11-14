@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>SDKデモ</title>
+    <link rel="stylesheet" href="../../sdk/sdk.css" />
+  </head>
+  <body>
+    <main data-testid="app-root">
+      <section class="card">
+        <h2>保存</h2>
+        <label>メモ<input data-testid="demo-memo" autocomplete="off" /></label>
+        <button data-testid="demo-save">保存する</button>
+      </section>
+      <section class="card">
+        <h2>トーストと通知</h2>
+        <div class="row">
+          <button class="grow secondary" data-testid="demo-toast">トースト</button>
+          <button class="grow secondary" data-testid="demo-notify">通知</button>
+        </div>
+        <p class="muted" data-testid="demo-notify-result"></p>
+      </section>
+      <section class="card">
+        <h2>カメラ</h2>
+        <button data-testid="demo-photo">写真を撮る</button>
+        <img data-testid="demo-photo-img" alt="撮った写真" hidden />
+      </section>
+    </main>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
