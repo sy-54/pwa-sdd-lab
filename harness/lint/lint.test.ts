@@ -73,6 +73,11 @@ describe('個別ルール', () => {
     const root = mutate('tests/e2e/counter.spec.ts', (s) => s.replace('AC-04', 'AC4'));
     expect(rules(root)).toContain(`${join(root, 'tests/e2e')}:trace-e2e`);
   });
+  it('UI契約に書かれたファイルがない（別のフォルダ名で作った）', () => {
+    const root = mutate('specs/requirements.md', (s) => s.replace('apps/counter/index.html', 'apps/tally/index.html'));
+    expect(rules(root, 'e2e')).toContain('requirements.md:contract-file');
+    expect(rules(root, 'tasks')).not.toContain('requirements.md:contract-file');
+  });
   it('ファイル欠落', () => {
     const root = mutate('specs/design.md', (s) => s);
     rmSync(join(root, 'specs/design.md'));

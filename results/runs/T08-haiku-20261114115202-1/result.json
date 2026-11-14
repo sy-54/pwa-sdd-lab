@@ -1,0 +1,111 @@
+{
+  "id": "T08-haiku-20261114115202-1",
+  "task": "T08-books",
+  "model": "haiku",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T12:03:00.484Z",
+  "acceptance": {
+    "passed": 0,
+    "total": 12,
+    "failed": [
+      "manifest.json がある",
+      "最初は 0 件で、フォームは閉じている",
+      "本を登録すると、題名と状態が一覧に出る",
+      "読んだ本に評価と感想を残せ、再読み込みしても残る",
+      "編集で題名と状態を変えられる",
+      "状態で絞り込め、件数は表示中の数になる",
+      "表紙の写真を付けられ、再読み込みしても残る",
+      "[意図] 削除は確認（SDK の確認ダイアログ）の後に消える",
+      "[意図] 題名が空欄では保存されず、トーストで知らせ、フォームは開いたまま",
+      "[意図] 新しく登録した本が一番上。初期の状態は「読みたい」で、編集しても順番は変わらない",
+      "[意図] キャンセルすると入力内容は捨てられる",
+      "[意図] 評価は「読んだ」の本だけ。他の状態に戻すと評価は消える"
+    ]
+  },
+  "passRate": 0,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 10,
+  "docLines": {
+    "spec.md": 147,
+    "design.md": 50,
+    "tasks.md": 13
+  },
+  "costUsd": 1.0112,
+  "tokensIn": 3548974,
+  "tokensOut": 70478,
+  "minutes": 9.9,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0427486,
+      "tokensIn": 58893,
+      "tokensOut": 3759,
+      "durationMs": 37331
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.2036704,
+      "tokensIn": 494908,
+      "tokensOut": 18726,
+      "durationMs": 153637
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.055929900000000005,
+      "tokensIn": 104229,
+      "tokensOut": 3752,
+      "durationMs": 37692
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0779364,
+      "tokensIn": 164229,
+      "tokensOut": 6360,
+      "durationMs": 57633
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.43129929999999994,
+      "tokensIn": 2113036,
+      "tokensOut": 25017,
+      "durationMs": 193130
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.14280699999999996,
+      "tokensIn": 487096,
+      "tokensOut": 9216,
+      "durationMs": 82226
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0568409,
+      "tokensIn": 126583,
+      "tokensOut": 3648,
+      "durationMs": 34892
+    }
+  ]
+}

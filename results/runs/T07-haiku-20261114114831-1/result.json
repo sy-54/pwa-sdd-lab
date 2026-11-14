@@ -1,0 +1,104 @@
+{
+  "id": "T07-haiku-20261114114831-1",
+  "task": "T07-flashcards",
+  "model": "haiku",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T11:59:30.368Z",
+  "acceptance": {
+    "passed": 6,
+    "total": 10,
+    "failed": [
+      "「まだ」のカードは覚えるまで繰り返し出て、結果は1回で覚えた枚数",
+      "[意図] 登録した順に出題され、「まだ」のカードは列の最後に回る",
+      "[意図] めくる前は「覚えた」「まだ」を押せない",
+      "[意図] 表か裏が空欄のカードは追加されず、削除は確認なし"
+    ]
+  },
+  "passRate": 0.6,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 11,
+  "docLines": {
+    "spec.md": 139,
+    "design.md": 39,
+    "tasks.md": 13
+  },
+  "costUsd": 0.8917,
+  "tokensIn": 3107227,
+  "tokensOut": 63913,
+  "minutes": 10.2,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0332073,
+      "tokensIn": 41127,
+      "tokensOut": 2601,
+      "durationMs": 26811
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1568587,
+      "tokensIn": 278976,
+      "tokensOut": 16042,
+      "durationMs": 133099
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 39808,
+      "lastError": "claude: exit 0"
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0580556,
+      "tokensIn": 121544,
+      "tokensOut": 4144,
+      "durationMs": 39200
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.4259704000000001,
+      "tokensIn": 2011632,
+      "tokensOut": 26532,
+      "durationMs": 236168
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1564362,
+      "tokensIn": 529288,
+      "tokensOut": 10042,
+      "durationMs": 99399
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.061218499999999995,
+      "tokensIn": 124660,
+      "tokensOut": 4552,
+      "durationMs": 40215
+    }
+  ]
+}

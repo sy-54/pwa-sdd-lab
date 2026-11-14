@@ -1,0 +1,98 @@
+{
+  "id": "T06-haiku-20261114114006-1",
+  "task": "T06-counter-change",
+  "model": "haiku",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T11:48:31.394Z",
+  "acceptance": {
+    "passed": 11,
+    "total": 11,
+    "failed": []
+  },
+  "passRate": 1,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 4,
+  "docLines": {
+    "spec.md": 118,
+    "design.md": 38,
+    "tasks.md": 13
+  },
+  "costUsd": 0.7884,
+  "tokensIn": 2367636,
+  "tokensOut": 52565,
+  "minutes": 8,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.06414670000000001,
+      "tokensIn": 93269,
+      "tokensOut": 3458,
+      "durationMs": 37284
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0777681,
+      "tokensIn": 165460,
+      "tokensOut": 6531,
+      "durationMs": 56983
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0741503,
+      "tokensIn": 162157,
+      "tokensOut": 5085,
+      "durationMs": 45602
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0961804,
+      "tokensIn": 205426,
+      "tokensOut": 7994,
+      "durationMs": 71103
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.2359244,
+      "tokensIn": 996175,
+      "tokensOut": 14598,
+      "durationMs": 119910
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1604104,
+      "tokensIn": 548460,
+      "tokensOut": 10157,
+      "durationMs": 104092
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0798572,
+      "tokensIn": 196689,
+      "tokensOut": 4742,
+      "durationMs": 46632
+    }
+  ]
+}

@@ -196,10 +196,20 @@ function lintE2E(testsDir: string, acs: string[], issues: Issue[]) {
       issues.push({ file: testsDir, line: 1, rule: 'trace-e2e', msg: `${id} のE2Eテストがない（テスト名に「${id}」を含める）` });
 }
 
+/** requirements.md にバッククォートで書かれたファイル（apps/<id>/index.html など）が、実際に置かれているか */
+function lintContractFiles(file: string, lines: string[], rootDir: string, issues: Issue[]) {
+  lines.forEach((l, i) => {
+    for (const m of l.matchAll(/`(apps\/[A-Za-z0-9_.\/-]+\.(?:html|json|js|css))`/g))
+      if (!existsSync(join(rootDir, m[1])))
+        issues.push({ file, line: i + 1, rule: 'contract-file', msg: `UI契約のファイル ${m[1]} がない（パスとフォルダ名を requirements.md のとおりにする）` });
+  });
+}
+
 export interface LintOptions {
   dir: string; // requirements.md / spec.md / design.md / tasks.md があるディレクトリ
   phase: Phase; // このフェーズまでの成果物を検査する
   testsDir?: string; // E2Eテストの場所（phase が e2e 以降のとき必須）
+  rootDir?: string; // requirements.md のファイルパスの基準（既定：dir の1つ上）
 }
 
 export function lint(opts: LintOptions): Issue[] {
@@ -226,7 +236,10 @@ export function lint(opts: LintOptions): Issue[] {
     const t = load('tasks.md');
     if (t) lintTasks('tasks.md', t, acs, issues);
   }
-  if (has('e2e')) lintE2E(opts.testsDir ?? join(opts.dir, '..', 'tests', 'e2e'), acs, issues);
+  if (has('e2e')) {
+    lintE2E(opts.testsDir ?? join(opts.dir, '..', 'tests', 'e2e'), acs, issues);
+    if (req) lintContractFiles('requirements.md', req, opts.rootDir ?? join(opts.dir, '..'), issues);
+  }
   return issues;
 }
 

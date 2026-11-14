@@ -1,0 +1,100 @@
+{
+  "id": "T07-sonnet-20261114112404-1",
+  "task": "T07-flashcards",
+  "model": "sonnet",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T11:39:15.866Z",
+  "acceptance": {
+    "passed": 9,
+    "total": 10,
+    "failed": [
+      "[意図] めくる前は「覚えた」「まだ」を押せない"
+    ]
+  },
+  "passRate": 0.9,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 11,
+  "docLines": {
+    "spec.md": 101,
+    "design.md": 43,
+    "tasks.md": 16
+  },
+  "costUsd": 3.7018,
+  "tokensIn": 5133814,
+  "tokensOut": 65457,
+  "minutes": 14.6,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.17320649999999999,
+      "tokensIn": 71384,
+      "tokensOut": 2058,
+      "durationMs": 33508
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.41928090000000007,
+      "tokensIn": 231994,
+      "tokensOut": 12847,
+      "durationMs": 168223
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.2716562,
+      "tokensIn": 170385,
+      "tokensOut": 6253,
+      "durationMs": 78601
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.21590520000000002,
+      "tokensIn": 187684,
+      "tokensOut": 3319,
+      "durationMs": 49233
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 1.7447892999999992,
+      "tokensIn": 3266601,
+      "tokensOut": 28535,
+      "durationMs": 364291
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.6356993,
+      "tokensIn": 894298,
+      "tokensOut": 9354,
+      "durationMs": 128168
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.2412231,
+      "tokensIn": 311468,
+      "tokensOut": 3091,
+      "durationMs": 52730
+    }
+  ]
+}
