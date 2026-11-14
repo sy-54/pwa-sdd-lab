@@ -1,0 +1,79 @@
+/* 共通スタイル。OS のライト／ダーク設定に従う。色は必ず変数を使う。 */
+:root {
+  color-scheme: light dark;
+  --bg: #f5f5f7;
+  --card: #ffffff;
+  --fg: #1c1c1e;
+  --muted: #6e6e73;
+  --border: #d9d9de;
+  --accent: #0a66d8;
+  --accent-fg: #ffffff;
+  --danger: #c62828;
+  --radius: 12px;
+  --gap: 12px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111113;
+    --card: #1e1e21;
+    --fg: #f2f2f4;
+    --muted: #a0a0a8;
+    --border: #3a3a40;
+    --accent: #4c9bff;
+    --accent-fg: #0b1220;
+    --danger: #ff6b6b;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 17px/1.5 -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+  padding: 0 max(16px, env(safe-area-inset-right)) calc(24px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  -webkit-tap-highlight-color: transparent;
+}
+[data-testid='app-root'] { display: flex; flex-direction: column; gap: var(--gap); padding-top: var(--gap); max-width: 640px; margin: 0 auto; }
+h1, h2, h3, p { margin: 0; }
+h2 { font-size: 1.1rem; }
+a { color: var(--accent); }
+img { max-width: 100%; border-radius: var(--radius); }
+
+button, .button {
+  appearance: none; border: 0; border-radius: var(--radius); min-height: 44px; padding: 10px 16px;
+  background: var(--accent); color: var(--accent-fg); font: inherit; font-weight: 600; cursor: pointer; touch-action: manipulation;
+}
+button:active { opacity: 0.7; }
+button:disabled { opacity: 0.4; cursor: default; }
+button.secondary { background: var(--card); color: var(--fg); border: 1px solid var(--border); }
+button.danger { background: var(--danger); color: #fff; }
+input, textarea, select {
+  width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--card); color: var(--fg); font: inherit; /* 16px 未満だと iOS が拡大する */
+}
+input[type='checkbox'], input[type='radio'] { width: 22px; min-height: 22px; height: 22px; accent-color: var(--accent); }
+label { display: flex; flex-direction: column; gap: 4px; color: var(--muted); font-size: 0.9rem; }
+ul, ol { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+li, .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px; }
+.row { display: flex; gap: var(--gap); align-items: center; }
+.row > .grow { flex: 1; min-width: 0; }
+.muted { color: var(--muted); }
+.big { font-size: 4rem; font-weight: 700; text-align: center; font-variant-numeric: tabular-nums; }
+[hidden] { display: none !important; }
+
+.sdk-header {
+  position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 8px;
+  margin: 0 calc(-1 * max(16px, env(safe-area-inset-right))) 0 calc(-1 * max(16px, env(safe-area-inset-left)));
+  padding: calc(8px + env(safe-area-inset-top)) 16px 8px; background: var(--bg); border-bottom: 1px solid var(--border);
+}
+.sdk-header a { text-decoration: none; min-height: 44px; display: flex; align-items: center; padding-right: 8px; white-space: nowrap; }
+.sdk-header h1 { font-size: 1.05rem; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sdk-toast {
+  position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 30;
+  max-width: calc(100vw - 32px); padding: 12px 18px; border-radius: 999px; background: var(--fg); color: var(--bg); font-size: 0.95rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+.sdk-overlay { position: fixed; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(0, 0, 0, 0.45); }
+.sdk-dialog { width: 100%; max-width: 360px; display: flex; flex-direction: column; gap: 16px; padding: 20px; border-radius: var(--radius); background: var(--card); color: var(--fg); }
+.sdk-dialog .row > button { flex: 1; }

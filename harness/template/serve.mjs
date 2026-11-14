@@ -14,7 +14,7 @@ const types = {
 createServer(async (req, res) => {
   try {
     const path = decodeURIComponent(new URL(req.url, 'http://x').pathname);
-    if (path === '/__health') return res.writeHead(200).end('ok');
+    if (path === '/__health') return res.writeHead(200, { 'content-type': 'text/html; charset=utf-8' }).end('<!doctype html><title>ok</title><body>ok</body>');
     let file = join(root, normalize(path));
     if (!file.startsWith(root)) throw new Error('forbidden');
     if ((await stat(file)).isDirectory()) {
