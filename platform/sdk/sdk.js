@@ -2,8 +2,10 @@
 // SDK の入口。ミニアプリは `import { mountApp, storage, ui, notify, camera } from '../../sdk/sdk.js'` で使う。
 import { currentAppId, storage } from './storage.js';
 import { ensureStyle, header, ui } from './ui.js';
+import { notify } from './notify.js';
+import { camera } from './camera.js';
 
-export { storage, ui };
+export { storage, ui, notify, camera };
 
 /** サイトのルート（ランチャー）の URL。 */
 export const homeUrl = new URL('../', import.meta.url).href;
