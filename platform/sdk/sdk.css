@@ -77,3 +77,4 @@ li, .card { background: var(--card); border: 1px solid var(--border); border-rad
 .sdk-overlay { position: fixed; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(0, 0, 0, 0.45); }
 .sdk-dialog { width: 100%; max-width: 360px; display: flex; flex-direction: column; gap: 16px; padding: 20px; border-radius: var(--radius); background: var(--card); color: var(--fg); }
 .sdk-dialog .row > button { flex: 1; }
+.card { display: flex; flex-direction: column; gap: 10px; }

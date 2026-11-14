@@ -13,7 +13,7 @@
 - [x] T07: apps/demo（メモ保存・トースト・通知・写真）と demo.spec (AC-03, AC-06, AC-07, AC-08)
 - [x] T08: ランチャーの一覧・空表示・起動と戻る、manifest.webmanifest とアイコン、launcher.spec (AC-01, AC-02, AC-14)
 - [x] T09: launcher/backup.js を単体テストから作り、設定パネルのエクスポート／インポートと backup.spec (AC-09, AC-10, AC-11)
-- [ ] T10: theme.spec でランチャーと demo のダーク表示を確認し、不足を直す (AC-12)
+- [x] T10: theme.spec でランチャーと demo のダーク表示を確認し、不足を直す (AC-12)
 - [ ] T11: sw.js（precache・キャッシュ優先・次回起動で更新）と offline.spec (AC-05)
 - [ ] T12: sdk/README.md（ミニアプリ作者向け API 一覧と使用例）を書く (setup)
 - [ ] T13: 全 AC の E2E を通し、lint --phase e2e を OK にする (AC-01, AC-02, AC-03, AC-04, AC-05, AC-06, AC-07, AC-08, AC-09, AC-10, AC-11, AC-12, AC-13, AC-14)
