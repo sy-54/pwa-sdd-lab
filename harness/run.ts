@@ -214,6 +214,7 @@ async function runOne(taskName: string, model: string, n: number, stakeholderMod
   writeFileSync(join(out, 'result.json'), JSON.stringify(result, null, 2));
   cpSync(work, join(out, 'work'), { recursive: true, filter: (s) => !/\/(node_modules|\.git|test-results|sdd|tools)$/.test(s) });
   rmSync(join(out, 'artifacts'), { recursive: true, force: true });
+  cpSync(join(work, 'specs'), join(out, 'specs'), { recursive: true }); // 文書だけは git で追跡する（work/ と logs/ は追跡しない）
   say(`完了：隠しE2E ${acceptance.passed}/${acceptance.total}, lint ${lintIssues.length}件, 手戻り ${result.rework}, $${result.costUsd}, ${result.minutes}分`);
   return result;
 }
