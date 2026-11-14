@@ -4,7 +4,7 @@
 > 各タスクは1時間以内・1コミット。純粋関数は単体テストから書き、画面は該当 AC の E2E を同じタスクで書く。
 > 完了条件は `npm run check:platform`（build・単体・E2E）の全件通過と、iPhone 実機での起動確認。
 
-- [ ] T01: scripts/manifest.ts の validateManifest を単体テストから作る (AC-01, AC-13)
+- [x] T01: scripts/manifest.ts の validateManifest を単体テストから作る (AC-01, AC-13)
 - [ ] T02: scripts/build.ts（検証 → dist/ コピー → apps.json / precache.js 生成）と build.spec、Playwright 設定、check:platform (AC-13)
 - [ ] T03: sdk/storage.js の createStorage をメモリ backend の単体テストから作り、IndexedDB backend と storage.spec を足す (AC-03, AC-04)
 - [ ] T04: sdk/ui.js と sdk.css（toast / confirm / ヘッダー / ダーク対応の CSS 変数）、sdk/sdk.js の mountApp (AC-02, AC-06, AC-12)
