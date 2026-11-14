@@ -1,0 +1,18 @@
+{
+  "name": "pwa-sdd-lab",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "lint:sdd": "tsx harness/lint/cli.ts",
+    "harness": "tsx harness/run.ts",
+    "summary": "tsx harness/grade/summary.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^3.0.0"
+  }
+}
