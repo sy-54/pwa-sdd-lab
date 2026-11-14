@@ -1,0 +1,54 @@
+{
+  "id": "T08-sonnet-20261114063902-1",
+  "task": "T08-books",
+  "model": "sonnet",
+  "invalid": "利用上限に達した（You've hit your session limit · resets 7:30pm (Asia/Tokyo)）",
+  "finishedAt": "2026-11-14T06:45:39.093Z",
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1124039,
+      "tokensIn": 72155,
+      "tokensOut": 2142,
+      "durationMs": 34211
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.37448319999999996,
+      "tokensIn": 208636,
+      "tokensOut": 11053,
+      "durationMs": 142681
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.24023339999999999,
+      "tokensIn": 188997,
+      "tokensOut": 4363,
+      "durationMs": 58214
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1978188,
+      "tokensIn": 157745,
+      "tokensOut": 3185,
+      "durationMs": 43185
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": false,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 0
+    }
+  ]
+}

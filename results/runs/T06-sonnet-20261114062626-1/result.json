@@ -1,0 +1,98 @@
+{
+  "id": "T06-sonnet-20261114062626-1",
+  "task": "T06-counter-change",
+  "model": "sonnet",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T06:38:11.854Z",
+  "acceptance": {
+    "passed": 11,
+    "total": 11,
+    "failed": []
+  },
+  "passRate": 1,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 6,
+  "docLines": {
+    "spec.md": 110,
+    "design.md": 41,
+    "tasks.md": 16
+  },
+  "costUsd": 2.5146,
+  "tokensIn": 2770282,
+  "tokensOut": 53200,
+  "minutes": 11.4,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1695017,
+      "tokensIn": 136706,
+      "tokensOut": 3441,
+      "durationMs": 51156
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.42764650000000004,
+      "tokensIn": 234687,
+      "tokensOut": 14378,
+      "durationMs": 174990
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.24850009999999997,
+      "tokensIn": 220010,
+      "tokensOut": 5045,
+      "durationMs": 60739
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1942698,
+      "tokensIn": 202889,
+      "tokensOut": 2825,
+      "durationMs": 38156
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.9689343999999999,
+      "tokensIn": 1434184,
+      "tokensOut": 20185,
+      "durationMs": 241985
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.2930717,
+      "tokensIn": 302699,
+      "tokensOut": 4448,
+      "durationMs": 61847
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.2126455,
+      "tokensIn": 239107,
+      "tokensOut": 2878,
+      "durationMs": 53040
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "id": "T05-sonnet-20261114062625-1",
+  "task": "T05-expense",
+  "model": "sonnet",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T06:39:01.985Z",
+  "acceptance": {
+    "passed": 9,
+    "total": 10,
+    "failed": [
+      "[意図] 月が変わると、一覧も合計も今月の分だけになる"
+    ]
+  },
+  "passRate": 0.9,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 10,
+  "docLines": {
+    "spec.md": 77,
+    "design.md": 35,
+    "tasks.md": 14
+  },
+  "costUsd": 2.8594,
+  "tokensIn": 3769778,
+  "tokensOut": 53325,
+  "minutes": 12.1,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.12424800000000001,
+      "tokensIn": 72662,
+      "tokensOut": 2746,
+      "durationMs": 43471
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.42321499999999995,
+      "tokensIn": 245912,
+      "tokensOut": 12799,
+      "durationMs": 171874
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1922876,
+      "tokensIn": 177409,
+      "tokensOut": 2594,
+      "durationMs": 42093
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1194279,
+      "tokensIn": 94224,
+      "tokensOut": 1943,
+      "durationMs": 28724
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 1.1422776999999997,
+      "tokensIn": 2045869,
+      "tokensOut": 19173,
+      "durationMs": 244383
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.5923099,
+      "tokensIn": 829641,
+      "tokensOut": 10002,
+      "durationMs": 136271
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.2656569,
+      "tokensIn": 304061,
+      "tokensOut": 4068,
+      "durationMs": 61087
+    }
+  ]
+}

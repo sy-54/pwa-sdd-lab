@@ -1,0 +1,54 @@
+{
+  "id": "T07-sonnet-20261114063811-1",
+  "task": "T07-flashcards",
+  "model": "sonnet",
+  "invalid": "利用上限に達した（You've hit your session limit · resets 7:30pm (Asia/Tokyo)）",
+  "finishedAt": "2026-11-14T06:45:39.389Z",
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.12603520000000001,
+      "tokensIn": 72935,
+      "tokensOut": 2811,
+      "durationMs": 51719
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.35424259999999996,
+      "tokensIn": 198788,
+      "tokensOut": 10134,
+      "durationMs": 122002
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.2775549,
+      "tokensIn": 191605,
+      "tokensOut": 6206,
+      "durationMs": 78030
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.2426881,
+      "tokensIn": 218779,
+      "tokensOut": 3732,
+      "durationMs": 51835
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": false,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 0
+    }
+  ]
+}
