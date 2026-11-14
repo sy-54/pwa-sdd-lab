@@ -21,7 +21,7 @@
 - platform の SDK を使う（`sdk/README.md`）。静的ファイルのみ
 
 ## UI契約
-- エントリ：`apps/flashcards/index.html`（`manifest.json` も置く）、ルート要素：`data-testid="app-root"`
+- エントリ：`apps/flashcards/index.html`（`apps/flashcards/manifest.json` も置く）、ルート要素：`data-testid="app-root"`
 - 一覧：入力 `card-front-input`、`card-back-input`、追加 `add-card`、学習開始 `study-start`
 - 各カード `card-item`：その中に `card-front`、`card-back`、`card-delete`
 - 学習画面 `study-view`（学習中だけ表示）：表 `study-front`、裏 `study-back`（めくるまで非表示）、`flip`、`know`（覚えた）、`again`（まだ）

@@ -201,7 +201,7 @@ function lintContractFiles(file: string, lines: string[], rootDir: string, issue
   lines.forEach((l, i) => {
     for (const m of l.matchAll(/`(apps\/[A-Za-z0-9_.\/-]+\.(?:html|json|js|css))`/g))
       if (!existsSync(join(rootDir, m[1])))
-        issues.push({ file, line: i + 1, rule: 'contract-file', msg: `UI契約のファイル ${m[1]} がない（パスとフォルダ名を requirements.md のとおりにする）` });
+        issues.push({ file, line: i + 1, rule: 'contract-file', msg: `UI契約のファイル ${m[1]} がない（ファイルを requirements.md のとおりの場所に置く。requirements.md は書き換えない）` });
   });
 }
 

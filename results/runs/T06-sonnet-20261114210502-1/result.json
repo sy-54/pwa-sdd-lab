@@ -1,0 +1,98 @@
+{
+  "id": "T06-sonnet-20261114210502-1",
+  "task": "T06-counter-change",
+  "model": "sonnet",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T21:18:20.400Z",
+  "acceptance": {
+    "passed": 11,
+    "total": 11,
+    "failed": []
+  },
+  "passRate": 1,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 10,
+  "docLines": {
+    "spec.md": 110,
+    "design.md": 37,
+    "tasks.md": 15
+  },
+  "costUsd": 3.232,
+  "tokensIn": 4530570,
+  "tokensOut": 55284,
+  "minutes": 12.9,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.227463,
+      "tokensIn": 97687,
+      "tokensOut": 3828,
+      "durationMs": 57490
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.5034661,
+      "tokensIn": 409248,
+      "tokensOut": 12968,
+      "durationMs": 159408
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.24788669999999996,
+      "tokensIn": 184946,
+      "tokensOut": 5722,
+      "durationMs": 68488
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.15849620000000003,
+      "tokensIn": 125216,
+      "tokensOut": 2687,
+      "durationMs": 39730
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 1.5006981999999995,
+      "tokensIn": 2966965,
+      "tokensOut": 21757,
+      "durationMs": 319784
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.3011342,
+      "tokensIn": 339138,
+      "tokensOut": 4721,
+      "durationMs": 59218
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.2928851,
+      "tokensIn": 407370,
+      "tokensOut": 3601,
+      "durationMs": 68492
+    }
+  ]
+}

@@ -21,7 +21,7 @@
 - platform の SDK を使う（`sdk/README.md`）。カメラと保存は SDK 経由。静的ファイルのみ
 
 ## UI契約
-- エントリ：`apps/books/index.html`（`manifest.json` も置く）、ルート要素：`data-testid="app-root"`
+- エントリ：`apps/books/index.html`（`apps/books/manifest.json` も置く）、ルート要素：`data-testid="app-root"`
 - 一覧：追加 `book-new`、絞り込み `filter`（`select`。値 `all` / `want` / `reading` / `done`）、件数 `book-count`（表示中の件数。数字のみ）
 - 各本 `book-item`：`book-title`、`book-status`（読みたい／読んでいる／読んだ）、`book-edit`、評価があれば `book-rating`（★を評価の数だけ。例 `★★★`）、写真があれば `book-cover`（`img`）
 - フォーム `book-form`（追加・編集のときだけ表示）：`form-title`、`form-status`（`select`。値 `want` / `reading` / `done`）、`form-rating`（`select`。値は空 / `1`〜`5`）、`form-note`（`textarea`）、`form-cover`（撮影ボタン）、`form-save`、`form-cancel`、`form-delete`（編集のときだけ表示）

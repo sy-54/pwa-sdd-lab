@@ -90,8 +90,16 @@ async function runOne(taskName: string, model: string, n: number, stakeholderMod
   const say = (m: string) => console.log(`[${id}] ${m}`);
   const read = (f: string) => (existsSync(join(work, f)) ? readFileSync(join(work, f), 'utf8').trim() : '');
   const lintErr = (phase: Phase) => {
+    // 要求の本文を書き換えて lint を通す抜け道をふさぐ（追記してよいのは末尾の改訂履歴だけ）
+    const orig = readFileSync(join(taskDir, 'requirements.md'), 'utf8').trim();
+    const tampered = !read('specs/requirements.md').startsWith(orig);
+    if (tampered) writeFileSync(join(work, 'specs/requirements.md'), orig + '\n');
     const issues = lint({ dir: join(work, 'specs'), phase, testsDir: join(work, 'tests/e2e') });
-    return issues.length ? `lint (--phase ${phase}) が NG：\n${format(issues)}` : null;
+    const msgs = [
+      tampered ? 'specs/requirements.md の本文が書き換えられていたので元に戻した。要求は変えない。要求のとおりになるよう成果物（ファイルの場所、コード、spec）の側を直す。改訂履歴は末尾に追記する' : '',
+      issues.length ? `lint (--phase ${phase}) が NG：\n${format(issues)}` : '',
+    ].filter(Boolean);
+    return msgs.length ? msgs.join('\n') : null;
   };
 
   let seq = 0;

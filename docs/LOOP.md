@@ -22,7 +22,7 @@
 | `task.json` | `{ "platform": true }` で SDK を同梱 | 既存コードへの改修課題は `seed/` に土台を置く（`tasks/T06-counter-change/` 参照） |
 
 **requirements.md の書き方**
-- UI契約に、エントリのパス（`apps/<id>/index.html`）と、隠しE2E が使う `data-testid`・表示形式をすべて書く。ここに書いていない testid や文言を隠しE2E で使ってはいけない。
+- UI契約に、エントリのパス（`apps/<id>/index.html`）と `apps/<id>/manifest.json`（省略せずフルパスで。lint が実在を検査する）、隠しE2E が使う `data-testid`・表示形式をすべて書く。ここに書いていない testid や文言を隠しE2E で使ってはいけない。
 - 曖昧さを2〜4個、わざと残す（初期値、並び順、空入力、削除の確認、境界値、日付の変わり目など）。答えは `stakeholder.md` に書く。
 - 曖昧さは「聞けば分かる」ものに限る。聞いても分からないこと、常識で決まらない文言の一致は採点しない。
 

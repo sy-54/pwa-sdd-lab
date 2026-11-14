@@ -1,0 +1,107 @@
+{
+  "id": "T08-sonnet-20261114211820-1",
+  "task": "T08-books",
+  "model": "sonnet",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T21:33:27.395Z",
+  "acceptance": {
+    "passed": 12,
+    "total": 12,
+    "failed": []
+  },
+  "passRate": 1,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 2,
+  "commits": 9,
+  "docLines": {
+    "spec.md": 95,
+    "design.md": 46,
+    "tasks.md": 14
+  },
+  "costUsd": 3.5442,
+  "tokensIn": 4732977,
+  "tokensOut": 64003,
+  "minutes": 14.5,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.142006,
+      "tokensIn": 74524,
+      "tokensOut": 3459,
+      "durationMs": 52439
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.20988850000000003,
+      "tokensIn": 78786,
+      "tokensOut": 6473,
+      "durationMs": 86092
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.28599720000000006,
+      "tokensIn": 138619,
+      "tokensOut": 9039,
+      "durationMs": 104298
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.22870980000000002,
+      "tokensIn": 213159,
+      "tokensOut": 3157,
+      "durationMs": 46853
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.2579205,
+      "tokensIn": 253107,
+      "tokensOut": 4375,
+      "durationMs": 64139
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 1.4871270999999997,
+      "tokensIn": 2656448,
+      "tokensOut": 24178,
+      "durationMs": 300453
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.6569932,
+      "tokensIn": 951828,
+      "tokensOut": 9570,
+      "durationMs": 140113
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.2755277,
+      "tokensIn": 366506,
+      "tokensOut": 3752,
+      "durationMs": 74792
+    }
+  ]
+}
