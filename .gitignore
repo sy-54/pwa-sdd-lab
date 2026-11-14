@@ -2,5 +2,6 @@ node_modules/
 .DS_Store
 test-results/
 playwright-report/
-results/runs/*/work/node_modules
-*.log.tmp
+results/runs/*/work/
+results/runs/*/logs/
+results/runs/*/acceptance.json

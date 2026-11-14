@@ -1,0 +1,10 @@
+{
+  "name": "sdd-workspace",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "e2e": "playwright test",
+    "lint:sdd": "tsx tools/lint/cli.ts specs --tests tests/e2e"
+  }
+}
