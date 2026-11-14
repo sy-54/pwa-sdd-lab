@@ -1,0 +1,131 @@
+{
+  "id": "T04-sonnet-20261114013106-2",
+  "task": "T04-habit",
+  "model": "sonnet",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T01:34:44.701Z",
+  "acceptance": {
+    "passed": 0,
+    "total": 10,
+    "failed": [
+      "manifest.json がある",
+      "追加した習慣は未チェックで連続 0 日",
+      "今日チェックすると連続 1 日、外すと 0 日",
+      "習慣ごとに別々に記録され、再読み込みしても残る",
+      "毎日続けると連続日数が増える",
+      "1日空くと連続は 0 に戻り、再開すると 1 から",
+      "[意図] 今日まだチェックしていなくても、昨日までの連続は途切れない",
+      "[意図] 日付の変わり目は深夜 0:00（21時→翌1時で翌日になる）",
+      "[意図] 同じ名前・空欄の習慣は追加できない",
+      "[意図] 削除は確認（SDK の確認ダイアログ）の後に消え、新しい習慣は一番下"
+    ]
+  },
+  "passRate": 0,
+  "lintErrors": 5,
+  "lintIssues": [
+    "requirements.md: [history] 末尾に「## 改訂履歴」がない",
+    "spec.md: [file-missing] spec.md がない",
+    "design.md: [file-missing] design.md がない",
+    "tasks.md: [file-missing] tasks.md がない",
+    "/var/folders/xv/grxjl8097cq_28lf0l1k27nr0000gn/T/sdd-runs/T04-sonnet-20261114013106-2/tests/e2e: [e2e-missing] E2Eテストのディレクトリがない"
+  ],
+  "ownTests": {
+    "unit": false,
+    "e2e": false
+  },
+  "rework": 14,
+  "gatesFailed": [
+    "spec-questions",
+    "spec",
+    "design",
+    "tasks",
+    "impl",
+    "e2e",
+    "feedback"
+  ],
+  "qaRounds": 0,
+  "commits": 0,
+  "docLines": {
+    "spec.md": 0,
+    "design.md": 0,
+    "tasks.md": 0
+  },
+  "costUsd": 0,
+  "tokensIn": 0,
+  "tokensOut": 0,
+  "minutes": 3.1,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 3,
+      "gate": false,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 16677,
+      "lastError": "specs/questions.md がない"
+    },
+    {
+      "phase": "spec",
+      "attempts": 3,
+      "gate": false,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 14623,
+      "lastError": "lint (--phase spec) が NG：\nspec.md:1: [file-missing] spec.md がない"
+    },
+    {
+      "phase": "design",
+      "attempts": 3,
+      "gate": false,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 15514,
+      "lastError": "lint (--phase design) が NG：\nspec.md:1: [file-missing] spec.md がない\ndesign.md:1: [file-missing] design.md がない"
+    },
+    {
+      "phase": "tasks",
+      "attempts": 3,
+      "gate": false,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 68895,
+      "lastError": "lint (--phase tasks) が NG：\nspec.md:1: [file-missing] spec.md がない\ndesign.md:1: [file-missing] design.md がない\ntasks.md:1: [file-missing] tasks.md がない"
+    },
+    {
+      "phase": "impl",
+      "attempts": 3,
+      "gate": false,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 14388,
+      "lastError": "npm test が失敗：\n\n> test\n> vitest run\n\n\n RUN  v3.2.7 /private/var/folders/xv/grxjl8097cq_28lf0l1k27nr0000gn/T/sdd-runs/T04-sonnet-20261114013106-2\n\nNo test files found, exiting with code 1\n\ninclude: tests/unit/**/*.test.{js,ts}\nexclude:  **/node_modules/**, **/dist/**, **/cypress/**, **/.{idea,git,cache,output,temp}/**, **/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*\n\n"
+    },
+    {
+      "phase": "e2e",
+      "attempts": 3,
+      "gate": false,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 40204,
+      "lastError": "npm run e2e が失敗：\n\n> e2e\n> playwright test\n\nError: No tests found\n\n"
+    },
+    {
+      "phase": "feedback",
+      "attempts": 3,
+      "gate": false,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 13107,
+      "lastError": "lint (--phase feedback) が NG：\nrequirements.md:29: [history] 末尾に「## 改訂履歴」がない\nspec.md:1: [file-missing] spec.md がない\ndesign.md:1: [file-missing] design.md がない\ntasks.md:1: [file-missing] tasks.md がない\n/var/folders/xv/grxjl8097cq_28lf0l1k27nr0000gn/T/sdd-runs/T04-sonnet-20261114013106-2/tests/e2e:1: [e2e-missing] E2Eテストのディレクトリがない"
+    }
+  ],
+  "invalid": "利用上限に達した（5時間枠。11/14 10:24頃〜）"
+}

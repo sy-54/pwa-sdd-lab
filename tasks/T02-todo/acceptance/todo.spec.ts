@@ -9,6 +9,7 @@ const texts = async (page: Page) => (await page.getByTestId('todo-text').allText
 async function add(page: Page, text: string) {
   const before = await items(page).count();
   await page.getByTestId('new-todo').fill(text);
+  await page.getByTestId('new-todo').blur(); // 入力を確定してから押す（入力直後のクリックは実装の細部に依存する）
   await page.getByTestId('add').click();
   await expect(items(page)).toHaveCount(before + 1);
 }

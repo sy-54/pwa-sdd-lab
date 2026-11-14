@@ -12,6 +12,7 @@ async function add(page: Page, front: string, back: string) {
   const before = await items(page).count();
   await page.getByTestId('card-front-input').fill(front);
   await page.getByTestId('card-back-input').fill(back);
+  await page.getByTestId('card-back-input').blur(); // 入力を確定してから押す
   await page.getByTestId('add-card').click();
   await expect(items(page)).toHaveCount(before + 1);
 }

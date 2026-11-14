@@ -8,6 +8,7 @@ const results = (existsSync(runsDir) ? readdirSync(runsDir) : [])
   .map((d) => join(runsDir, d, 'result.json'))
   .filter(existsSync)
   .map((f) => JSON.parse(readFileSync(f, 'utf8')))
+  .filter((r) => !r.invalid) // 利用上限などで無効になった実行は集計しない
   .sort((a, b) => a.id.localeCompare(b.id));
 
 const avg = (xs: number[]) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : 0);

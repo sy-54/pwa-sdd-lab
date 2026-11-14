@@ -9,7 +9,8 @@
     "summary": "tsx harness/grade/summary.ts",
     "build:platform": "tsx platform/scripts/build.ts",
     "e2e:platform": "playwright test -c platform/playwright.config.ts",
-    "check:platform": "npm run build:platform && vitest run platform && npm run e2e:platform"
+    "check:platform": "npm run build:platform && vitest run platform && npm run e2e:platform",
+    "regrade": "tsx harness/grade/regrade.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.56.0",

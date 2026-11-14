@@ -1,0 +1,108 @@
+{
+  "id": "T01-sonnet-20261114011104-1",
+  "task": "T01-timer",
+  "model": "sonnet",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T01:24:31.320Z",
+  "acceptance": {
+    "passed": 7,
+    "total": 9,
+    "failed": [
+      "[意図] 0 分では開始しない",
+      "[意図] 時間になったら SDK の通知で知らせる（テスト環境ではトースト）"
+    ]
+  },
+  "passRate": 0.7777777777777778,
+  "lintErrors": 1,
+  "lintIssues": [
+    "requirements.md: [history] 末尾に「## 改訂履歴」がない"
+  ],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 2,
+  "gatesFailed": [
+    "feedback"
+  ],
+  "qaRounds": 1,
+  "commits": 6,
+  "docLines": {
+    "spec.md": 79,
+    "design.md": 37,
+    "tasks.md": 12
+  },
+  "costUsd": 1.6904,
+  "tokensIn": 1890993,
+  "tokensOut": 36552,
+  "minutes": 12.7,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1293912,
+      "tokensIn": 87937,
+      "tokensOut": 2849,
+      "durationMs": 46480
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.37101419999999996,
+      "tokensIn": 202564,
+      "tokensOut": 11197,
+      "durationMs": 146508
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.18142689999999997,
+      "tokensIn": 122582,
+      "tokensOut": 4116,
+      "durationMs": 55457
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.19575749999999997,
+      "tokensIn": 171500,
+      "tokensOut": 3259,
+      "durationMs": 45251
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.8127766999999999,
+      "tokensIn": 1306410,
+      "tokensOut": 15131,
+      "durationMs": 192411
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 195123,
+      "lastError": "claude: exit 1"
+    },
+    {
+      "phase": "feedback",
+      "attempts": 3,
+      "gate": false,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 82096,
+      "lastError": "lint (--phase feedback) が NG：\nrequirements.md:30: [history] 末尾に「## 改訂履歴」がない"
+    }
+  ],
+  "regradedAt": "2026-11-14T05:40:06.432Z"
+}

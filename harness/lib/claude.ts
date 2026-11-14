@@ -36,6 +36,8 @@ export interface ClaudeResult {
   turns: number;
   durationMs: number;
   error?: string;
+  /** 利用上限・認証切れなど、モデルの出来と無関係な失敗。この実行は採点してはいけない */
+  infra?: string;
 }
 
 export function runClaude(c: ClaudeCall): Promise<ClaudeResult> {
@@ -55,6 +57,7 @@ export function runClaude(c: ClaudeCall): Promise<ClaudeResult> {
     let buf = '';
     let stderr = '';
     let final: any;
+    let limited = false;
     let sessionId: string | undefined;
     const timer = setTimeout(() => child.kill('SIGKILL'), c.timeoutMs ?? 20 * 60_000);
 
@@ -69,6 +72,7 @@ export function runClaude(c: ClaudeCall): Promise<ClaudeResult> {
           const ev = JSON.parse(line);
           sessionId ??= ev.session_id;
           if (ev.type === 'result') final = ev;
+          if (ev.type === 'rate_limit_event' && ev.rate_limit_info?.status === 'rejected') limited = true;
         } catch {}
       }
     });
@@ -77,6 +81,9 @@ export function runClaude(c: ClaudeCall): Promise<ClaudeResult> {
       clearTimeout(timer);
       log.end();
       const u = final?.usage ?? {};
+      const status = final?.api_error_status;
+      const infra =
+        limited || status === 429 ? `利用上限に達した（${final?.result ?? ''}）` : status === 401 || status === 403 ? `認証エラー（${status}）` : !final && code !== 0 && signal !== 'SIGKILL' ? `claude を起動できない（${stderr.slice(-200)}）` : undefined;
       done({
         ok: !!final && !final.is_error && code === 0,
         text: final?.result ?? '',
@@ -86,6 +93,7 @@ export function runClaude(c: ClaudeCall): Promise<ClaudeResult> {
         tokensOut: u.output_tokens ?? 0,
         turns: final?.num_turns ?? 0,
         durationMs: Date.now() - started,
+        infra,
         error: final && !final.is_error ? undefined : signal === 'SIGKILL' ? 'timeout' : (final?.subtype ?? stderr.slice(-500)) || `exit ${code}`,
       });
     });

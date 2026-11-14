@@ -13,6 +13,7 @@ const streak = (page: Page, name: string) => item(page, name).getByTestId('habit
 async function add(page: Page, name: string) {
   const before = await items(page).count();
   await page.getByTestId('new-habit').fill(name);
+  await page.getByTestId('new-habit').blur(); // 入力を確定してから押す
   await page.getByTestId('add-habit').click();
   await expect(items(page)).toHaveCount(before + 1);
 }

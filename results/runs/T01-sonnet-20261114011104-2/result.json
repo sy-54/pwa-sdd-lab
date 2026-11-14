@@ -1,0 +1,102 @@
+{
+  "id": "T01-sonnet-20261114011104-2",
+  "task": "T01-timer",
+  "model": "sonnet",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T01:20:10.514Z",
+  "acceptance": {
+    "passed": 7,
+    "total": 9,
+    "failed": [
+      "[意図] 最初は 3 分がセットされている",
+      "[意図] 時間になったら SDK の通知で知らせる（テスト環境ではトースト）"
+    ]
+  },
+  "passRate": 0.7777777777777778,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 8,
+  "docLines": {
+    "spec.md": 75,
+    "design.md": 32,
+    "tasks.md": 13
+  },
+  "costUsd": 2.1448,
+  "tokensIn": 2799565,
+  "tokensOut": 36183,
+  "minutes": 8.7,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.075951,
+      "tokensIn": 48787,
+      "tokensOut": 1452,
+      "durationMs": 28750
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.2170397,
+      "tokensIn": 208863,
+      "tokensOut": 4111,
+      "durationMs": 59731
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.2311082,
+      "tokensIn": 200892,
+      "tokensOut": 4245,
+      "durationMs": 59710
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.18863509999999997,
+      "tokensIn": 188810,
+      "tokensOut": 2735,
+      "durationMs": 41913
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.6682380000000002,
+      "tokensIn": 1157409,
+      "tokensOut": 10316,
+      "durationMs": 149195
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.6001957,
+      "tokensIn": 826253,
+      "tokensOut": 10832,
+      "durationMs": 143822
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1636752,
+      "tokensIn": 168551,
+      "tokensOut": 2492,
+      "durationMs": 39307
+    }
+  ],
+  "regradedAt": "2026-11-14T05:40:16.238Z"
+}

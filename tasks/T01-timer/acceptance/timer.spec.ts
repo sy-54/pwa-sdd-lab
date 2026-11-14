@@ -8,6 +8,11 @@ test.beforeEach(async ({ page }) => {
 });
 const time = (page) => page.getByTestId('time');
 const sec = (page, s: number) => page.clock.runFor(s * 1000);
+/** 分を入力して確定する（入力欄からフォーカスを外してから次の操作をする。入力直後のクリックは実装の細部に依存するため） */
+const setMinutes = async (page, v: string) => {
+  await page.getByTestId('minutes').fill(v);
+  await page.getByTestId('minutes').blur();
+};
 
 test('manifest.json がある', async ({ request }) => {
   const m = await (await request.get('/apps/timer/manifest.json')).json();
@@ -16,7 +21,7 @@ test('manifest.json がある', async ({ request }) => {
 });
 
 test('分を指定して開始すると 1 秒ずつ減る', async ({ page }) => {
-  await page.getByTestId('minutes').fill('5');
+  await setMinutes(page, '5');
   await page.getByTestId('start').click();
   await sec(page, 1);
   await expect(time(page)).toHaveText('04:59');
@@ -25,7 +30,7 @@ test('分を指定して開始すると 1 秒ずつ減る', async ({ page }) => 
 });
 
 test('一時停止で止まり、開始で続きから再開する', async ({ page }) => {
-  await page.getByTestId('minutes').fill('2');
+  await setMinutes(page, '2');
   await page.getByTestId('start').click();
   await sec(page, 10);
   await page.getByTestId('pause').click();
@@ -37,7 +42,7 @@ test('一時停止で止まり、開始で続きから再開する', async ({ pa
 });
 
 test('リセットで止まり、指定した分数に戻る', async ({ page }) => {
-  await page.getByTestId('minutes').fill('2');
+  await setMinutes(page, '2');
   await page.getByTestId('start').click();
   await sec(page, 10);
   await page.getByTestId('reset').click();
@@ -48,7 +53,7 @@ test('リセットで止まり、指定した分数に戻る', async ({ page }) 
 
 test('時間になると 00:00 で止まり、終了が表示される', async ({ page }) => {
   await expect(page.getByTestId('done')).toBeHidden();
-  await page.getByTestId('minutes').fill('1');
+  await setMinutes(page, '1');
   await page.getByTestId('start').click();
   await sec(page, 60);
   await expect(time(page)).toHaveText('00:00');
@@ -63,22 +68,23 @@ test('[意図] 最初は 3 分がセットされている', async ({ page }) => 
 });
 
 test('[意図] 0 分では開始しない', async ({ page }) => {
-  await page.getByTestId('minutes').fill('0');
+  await setMinutes(page, '0');
+  const before = await time(page).textContent(); // 0 のときの表示（00:00 でも、1 分に直しても可）は問わない
   await page.getByTestId('start').click({ force: true, timeout: 1000 }).catch(() => {});
   await sec(page, 3);
+  await expect(time(page)).toHaveText(before!);
   await expect(page.getByTestId('done')).toBeHidden();
-  await expect(time(page)).toHaveText('00:00');
 });
 
 test('[意図] 時間になったら SDK の通知で知らせる（テスト環境ではトースト）', async ({ page }) => {
-  await page.getByTestId('minutes').fill('1');
+  await setMinutes(page, '1');
   await page.getByTestId('start').click();
   await sec(page, 60);
   await expect(page.getByTestId('sdk-toast')).toBeVisible();
 });
 
 test('[意図] 終了後にリセットすると終了の表示が消える', async ({ page }) => {
-  await page.getByTestId('minutes').fill('1');
+  await setMinutes(page, '1');
   await page.getByTestId('start').click();
   await sec(page, 60);
   await expect(page.getByTestId('done')).toBeVisible();

@@ -22,6 +22,10 @@ const ALLOWED = [
 ];
 const DISALLOWED = ['Bash(npm install*)', 'Bash(npm i *)', 'Bash(npx playwright install*)', 'Bash(git push*)'];
 
+/** モデルと無関係な失敗（利用上限など）。実行を無効にして、残りのキューも止める */
+class InfraError extends Error {}
+let aborted: string | undefined;
+
 interface PhaseLog {
   phase: string;
   attempts: number;
@@ -112,6 +116,7 @@ async function runOne(taskName: string, model: string, n: number, stakeholderMod
     while (log.attempts < MAX_ATTEMPTS) {
       log.attempts++;
       const r = await call(`${name}-${log.attempts}`, p, session);
+      if (r.infra) throw new InfraError(r.infra);
       log.costUsd += r.costUsd;
       log.tokensIn += r.tokensIn;
       log.tokensOut += r.tokensOut;
@@ -130,12 +135,13 @@ async function runOne(taskName: string, model: string, n: number, stakeholderMod
     return log.gate;
   }
 
-  // 1. SPEC：質問 → 要求者シミュレータが回答 → spec.md
   let qaRounds = 0;
+  try {
+  // 1. SPEC：質問 → 要求者シミュレータが回答 → spec.md
   await phase(
     'spec-questions',
     intro('01-spec.md') +
-      '今回は手順1〜2（質問）だけを行います。specs/requirements.md を読み、質問を specs/questions.md に「Q1: …」の形式で書いて終了してください（最大5個。質問が不要なら NONE とだけ書く）。spec.md はまだ書きません。',
+      '今回は手順1〜3（質問）だけを行います。specs/requirements.md を読み、質問を specs/questions.md に「Q1: …」の形式で書いて終了してください（最大5個。質問が不要なら NONE とだけ書く）。spec.md はまだ書きません。',
     () => (read('specs/questions.md') ? null : 'specs/questions.md がない'),
   );
   const askStakeholder = async () => {
@@ -145,6 +151,7 @@ async function runOne(taskName: string, model: string, n: number, stakeholderMod
     const empty = join(RUNS_ROOT, `${id}-stakeholder`);
     mkdirSync(empty, { recursive: true });
     const a = await answer({ questions: q, stakeholderFile: join(taskDir, 'stakeholder.md'), model: stakeholderModel, cwd: empty, logFile: join(logs, `stakeholder-${qaRounds}.jsonl`) });
+    if (a.infra) throw new InfraError(a.infra);
     const body = a.ok ? a.text : '（回答を得られなかった。未決事項として扱うこと）';
     writeFileSync(join(work, 'specs/qa.md'), `${read('specs/qa.md')}\n\n## ラウンド${qaRounds}\n### 質問\n${q}\n\n### 要求者の回答\n${body}\n`.trimStart());
     rmSync(join(work, 'specs/questions.md'));
@@ -153,9 +160,9 @@ async function runOne(taskName: string, model: string, n: number, stakeholderMod
   await askStakeholder();
   const specPrompt = () =>
     intro('01-spec.md') +
-    `質問への回答は specs/qa.md にあります（なければ質問なしで進めた）。手順3〜5を行い、specs/spec.md を書いて、\`npm run lint:sdd -- --phase spec\` が OK になるまで直してください。` +
+    `質問への回答は specs/qa.md にあります（なければ質問なしで進めた）。手順4〜6を行い、specs/spec.md を書いて、\`npm run lint:sdd -- --phase spec\` が OK になるまで直してください。` +
     (qaRounds < MAX_QA_ROUNDS && qaRounds > 0
-      ? '回答を読んで、仕様を決めるのにどうしても追加の質問が必要な場合に限り、spec.md を書かずに specs/questions.md へ新しい質問（最大5個）を書いて終了してもかまいません（あと1ラウンドだけ）。'
+      ? '\nただしその前に、手順2で書き出した曖昧さのうち、回答を読んでもまだ決まっていないものがないかを確かめてください。残っていれば、spec.md を書かずに specs/questions.md へ追加の質問（最大5個）を書いて終了します（これが最後のラウンド）。残っていなければ、そのまま spec.md を書きます。'
       : '');
   for (;;) {
     await phase('spec', specPrompt(), () => (read('specs/questions.md') && !read('specs/spec.md') ? null : lintErr('spec')));
@@ -188,6 +195,15 @@ async function runOne(taskName: string, model: string, n: number, stakeholderMod
     },
   );
   await phase('feedback', intro('06-feedback.md') + 'specs/requirements.md の末尾に改訂履歴を書き、`npm run lint:sdd -- --phase feedback` を OK にしてコミットしてください。', () => lintErr('feedback'));
+
+  } catch (e) {
+    if (!(e instanceof InfraError)) throw e;
+    // 採点しない。無効な実行として記録し、集計から除く
+    aborted = e.message;
+    writeFileSync(join(out, 'result.json'), JSON.stringify({ id, task: taskName, model, invalid: e.message, finishedAt: new Date().toISOString(), phases }, null, 2));
+    say(`無効：${e.message}`);
+    return;
+  }
 
   // 採点
   sh(work, 'git add -A && git commit -qm "実行終了時の未コミット分" ; git log --oneline > git-log.txt');
@@ -229,10 +245,11 @@ console.log(`${jobs.length} 件を並列 ${o.parallel} で実行（作業場所:
 let next = 0;
 await Promise.all(
   Array.from({ length: Math.min(o.parallel, jobs.length) }, async () => {
-    while (next < jobs.length) {
+    while (next < jobs.length && !aborted) {
       const j = jobs[next++];
       await runOne(j.t, j.m, j.n, o.stakeholder).catch((e) => console.error(`[${j.t}/${j.m}] 実行失敗:`, e));
     }
   }),
 );
+if (aborted) console.log(`中断：${aborted}。未実行 ${jobs.length - next} 件。上限が戻ってから同じコマンドで再実行する`);
 console.log('集計は `npm run summary` で results/summary.md に出力する');

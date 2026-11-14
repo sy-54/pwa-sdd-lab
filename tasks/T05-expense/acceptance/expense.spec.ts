@@ -12,6 +12,7 @@ async function add(page: Page, amount: string, category?: string) {
   const before = await items(page).count();
   if (category) await page.getByTestId('category').selectOption(category);
   await page.getByTestId('amount').fill(amount);
+  await page.getByTestId('amount').blur(); // 入力を確定してから押す
   await page.getByTestId('add').click();
   await expect(items(page)).toHaveCount(before + 1);
 }

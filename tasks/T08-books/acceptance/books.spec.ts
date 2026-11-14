@@ -17,6 +17,7 @@ async function fill(page: Page, f: Fields) {
   if (f.note !== undefined) await page.getByTestId('form-note').fill(f.note);
 }
 async function save(page: Page) {
+  await page.getByTestId('form-save').focus(); // 入力を確定してから押す
   await page.getByTestId('form-save').click();
   await expect(page.getByTestId('book-form')).toBeHidden();
 }

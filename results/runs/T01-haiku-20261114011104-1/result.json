@@ -1,0 +1,104 @@
+{
+  "id": "T01-haiku-20261114011104-1",
+  "task": "T01-timer",
+  "model": "haiku",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T01:19:47.141Z",
+  "acceptance": {
+    "passed": 5,
+    "total": 9,
+    "failed": [
+      "manifest.json がある",
+      "リセットで止まり、指定した分数に戻る",
+      "[意図] 最初は 3 分がセットされている",
+      "[意図] 終了後にリセットすると終了の表示が消える"
+    ]
+  },
+  "passRate": 0.5555555555555556,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 7,
+  "docLines": {
+    "spec.md": 75,
+    "design.md": 40,
+    "tasks.md": 11
+  },
+  "costUsd": 0.6487,
+  "tokensIn": 2013969,
+  "tokensOut": 46180,
+  "minutes": 7.9,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.031430700000000006,
+      "tokensIn": 52882,
+      "tokensOut": 2400,
+      "durationMs": 27169
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.047672,
+      "tokensIn": 93676,
+      "tokensOut": 3766,
+      "durationMs": 33942
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.04267529999999999,
+      "tokensIn": 81568,
+      "tokensOut": 2562,
+      "durationMs": 26224
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0565627,
+      "tokensIn": 113120,
+      "tokensOut": 4544,
+      "durationMs": 40317
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1454863,
+      "tokensIn": 449941,
+      "tokensOut": 11294,
+      "durationMs": 94096
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.2741641,
+      "tokensIn": 1109163,
+      "tokensOut": 18009,
+      "durationMs": 218479
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.050677,
+      "tokensIn": 113619,
+      "tokensOut": 3605,
+      "durationMs": 35151
+    }
+  ],
+  "regradedAt": "2026-11-14T05:39:36.526Z"
+}

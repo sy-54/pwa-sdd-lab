@@ -1,0 +1,130 @@
+{
+  "id": "T03-haiku-20261114012854-1",
+  "task": "T03-photo-memo",
+  "model": "haiku",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T01:33:01.868Z",
+  "acceptance": {
+    "passed": 0,
+    "total": 9,
+    "failed": [
+      "manifest.json がある",
+      "最初は写真がなく、その旨が表示される",
+      "撮った写真が一覧に表示される",
+      "再読み込みしても写真とメモが残る",
+      "メモは写真ごとに保存され、後から書き換えられる",
+      "[意図] 新しい写真が一番上に来る",
+      "[意図] 削除は確認（SDK の確認ダイアログ）の後に消える",
+      "[意図] 削除の確認でキャンセルすると何も変わらない",
+      "最後の1枚を消すと、写真がない旨の表示に戻る"
+    ]
+  },
+  "passRate": 0,
+  "lintErrors": 5,
+  "lintIssues": [
+    "requirements.md: [history] 末尾に「## 改訂履歴」がない",
+    "spec.md: [file-missing] spec.md がない",
+    "design.md: [file-missing] design.md がない",
+    "tasks.md: [file-missing] tasks.md がない",
+    "/var/folders/xv/grxjl8097cq_28lf0l1k27nr0000gn/T/sdd-runs/T03-haiku-20261114012854-1/tests/e2e: [e2e-missing] E2Eテストのディレクトリがない"
+  ],
+  "ownTests": {
+    "unit": false,
+    "e2e": false
+  },
+  "rework": 14,
+  "gatesFailed": [
+    "spec-questions",
+    "spec",
+    "design",
+    "tasks",
+    "impl",
+    "e2e",
+    "feedback"
+  ],
+  "qaRounds": 0,
+  "commits": 0,
+  "docLines": {
+    "spec.md": 0,
+    "design.md": 0,
+    "tasks.md": 0
+  },
+  "costUsd": 0,
+  "tokensIn": 0,
+  "tokensOut": 0,
+  "minutes": 3.6,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 3,
+      "gate": false,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 41080,
+      "lastError": "specs/questions.md がない"
+    },
+    {
+      "phase": "spec",
+      "attempts": 3,
+      "gate": false,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 46331,
+      "lastError": "lint (--phase spec) が NG：\nspec.md:1: [file-missing] spec.md がない"
+    },
+    {
+      "phase": "design",
+      "attempts": 3,
+      "gate": false,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 13097,
+      "lastError": "lint (--phase design) が NG：\nspec.md:1: [file-missing] spec.md がない\ndesign.md:1: [file-missing] design.md がない"
+    },
+    {
+      "phase": "tasks",
+      "attempts": 3,
+      "gate": false,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 41602,
+      "lastError": "lint (--phase tasks) が NG：\nspec.md:1: [file-missing] spec.md がない\ndesign.md:1: [file-missing] design.md がない\ntasks.md:1: [file-missing] tasks.md がない"
+    },
+    {
+      "phase": "impl",
+      "attempts": 3,
+      "gate": false,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 15254,
+      "lastError": "npm test が失敗：\n\n> test\n> vitest run\n\n\n RUN  v3.2.7 /private/var/folders/xv/grxjl8097cq_28lf0l1k27nr0000gn/T/sdd-runs/T03-haiku-20261114012854-1\n\nNo test files found, exiting with code 1\n\ninclude: tests/unit/**/*.test.{js,ts}\nexclude:  **/node_modules/**, **/dist/**, **/cypress/**, **/.{idea,git,cache,output,temp}/**, **/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*\n\n"
+    },
+    {
+      "phase": "e2e",
+      "attempts": 3,
+      "gate": false,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 13880,
+      "lastError": "npm run e2e が失敗：\n\n> e2e\n> playwright test\n\nError: No tests found\n\n"
+    },
+    {
+      "phase": "feedback",
+      "attempts": 3,
+      "gate": false,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 43111,
+      "lastError": "lint (--phase feedback) が NG：\nrequirements.md:31: [history] 末尾に「## 改訂履歴」がない\nspec.md:1: [file-missing] spec.md がない\ndesign.md:1: [file-missing] design.md がない\ntasks.md:1: [file-missing] tasks.md がない\n/var/folders/xv/grxjl8097cq_28lf0l1k27nr0000gn/T/sdd-runs/T03-haiku-20261114012854-1/tests/e2e:1: [e2e-missing] E2Eテストのディレクトリがない"
+    }
+  ],
+  "invalid": "利用上限に達した（5時間枠。11/14 10:24頃〜）"
+}

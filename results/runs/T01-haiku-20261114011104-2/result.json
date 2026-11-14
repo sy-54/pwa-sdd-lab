@@ -1,0 +1,113 @@
+{
+  "id": "T01-haiku-20261114011104-2",
+  "task": "T01-timer",
+  "model": "haiku",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T01:25:40.015Z",
+  "acceptance": {
+    "passed": 3,
+    "total": 9,
+    "failed": [
+      "分を指定して開始すると 1 秒ずつ減る",
+      "一時停止で止まり、開始で続きから再開する",
+      "リセットで止まり、指定した分数に戻る",
+      "時間になると 00:00 で止まり、終了が表示される",
+      "[意図] 時間になったら SDK の通知で知らせる（テスト環境ではトースト）",
+      "[意図] 終了後にリセットすると終了の表示が消える"
+    ]
+  },
+  "passRate": 0.3333333333333333,
+  "lintErrors": 1,
+  "lintIssues": [
+    "requirements.md: [history] 末尾に「## 改訂履歴」がない"
+  ],
+  "ownTests": {
+    "unit": true,
+    "e2e": false
+  },
+  "rework": 4,
+  "gatesFailed": [
+    "e2e",
+    "feedback"
+  ],
+  "qaRounds": 1,
+  "commits": 5,
+  "docLines": {
+    "spec.md": 79,
+    "design.md": 32,
+    "tasks.md": 10
+  },
+  "costUsd": 0.7146,
+  "tokensIn": 2437814,
+  "tokensOut": 46149,
+  "minutes": 11.7,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0306882,
+      "tokensIn": 52981,
+      "tokensOut": 2215,
+      "durationMs": 26657
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0597679,
+      "tokensIn": 93374,
+      "tokensOut": 5733,
+      "durationMs": 51341
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0442516,
+      "tokensIn": 112442,
+      "tokensOut": 2314,
+      "durationMs": 25484
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.060297500000000004,
+      "tokensIn": 97606,
+      "tokensOut": 5597,
+      "durationMs": 47777
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.14731740000000002,
+      "tokensIn": 605649,
+      "tokensOut": 8796,
+      "durationMs": 77110
+    },
+    {
+      "phase": "e2e",
+      "attempts": 3,
+      "gate": false,
+      "costUsd": 0.3722559000000001,
+      "tokensIn": 1475762,
+      "tokensOut": 21494,
+      "durationMs": 427396,
+      "lastError": "npm run e2e が失敗：\nv/grxjl8097cq_28lf0l1k27nr0000gn/T/sdd-runs/T01-haiku-20261114011104-2/tests/e2e/timer.spec.ts:100:29\n\n    Error Context: test-results/timer-AC-05-リセットボタンでリセット-webkit/error-context.md\n\n\n[6/7] [webkit] › tests/e2e/timer.spec.ts:120:1 › AC-06 時間終了で通知と done 表示\n  5) [webkit] › tests/e2e/timer.spec.ts:120:1 › AC-06 時間終了で通知と done 表示 ─────────────────────────────\n\n    Error: expect(locator).toBeVisible() failed\n\n    Locator:  getByTestId('done')\n    Expected: visible\n    Received: hidden\n    Timeout:  3000ms\n\n    Call log:\n      - Expect \"toBeVisible\" getByTestId('done') with timeout 3000ms\n      - waiting for getByTestId('done')\n        10 × locator resolved to <div hidden=\"\" data-testid=\"done\">終了</div>\n           - unexpected value \"hidden\"\n\n\n      140 |   // Wait for timer to end\n      141 |   await expect(doneDisplay).toHaveText('終了', { timeout: 5000 });\n    > 142 |   await expect(doneDisplay).toBeVisible();\n          |                             ^\n      143 | });\n      144 |\n      145 | test('AC-07 minutes 変更中にカウント中なら一時停止', async ({ page }) => {\n        at /private/var/folders/xv/grxjl8097cq_28lf0l1k27nr0000gn/T/sdd-runs/T01-haiku-20261114011104-2/tests/e2e/timer.spec.ts:142:29\n\n    Error Context: test-results/timer-AC-06-時間終了で通知と-done-表示-webkit/error-context.md\n\n\n[7/7] [webkit] › tests/e2e/timer.spec.ts:145:1 › AC-07 minutes 変更中にカウント中なら一時停止\n  6) [webkit] › tests/e2e/timer.spec.ts:145:1 › AC-07 minutes 変更中にカウント中なら一時停止 ──────────────────────\n\n    Error: expect(locator).toHaveText(expected) failed\n\n    Locator:  getByTestId('time')\n    Expected: \"02:59\"\n    Received: \"03:00\"\n    Timeout:  5000ms\n\n    Call log:\n      - Expect \"toHaveText\" getByTestId('time') with timeout 5000ms\n      - waiting for getByTestId('time')\n        14 × locator resolved to <div class=\"big\" data-testid=\"time\">03:00</div>\n           - unexpected value \"03:00\"\n\n\n      154 |\n      155 |   // Wait for timer to tick down\n    > 156 |   await expect(timeDisplay).toHaveText('02:59', { timeout: 5000 });\n          |                             ^\n      157 |\n      158 |   // Change minutes to 5\n      159 |   await minutesInput.focus();\n        at /private/var/folders/xv/grxjl8097cq_28lf0l1k27nr0000gn/T/sdd-runs/T01-haiku-20261114011104-2/tests/e2e/timer.spec.ts:156:29\n\n    Error Context: test-results/timer-AC-07-minutes-変更中にカウント中なら一時停止-webkit/error-context.md\n\n\n  6 failed\n    [webkit] › tests/e2e/timer.spec.ts:20:1 › AC-02 分の入力で時間を変更 ─────────────────────────────────────\n    [webkit] › tests/e2e/timer.spec.ts:40:1 › AC-03 開始ボタンでカウントダウン開始 ────────────────────────────────\n    [webkit] › tests/e2e/timer.spec.ts:53:1 › AC-04 一時停止ボタンで一時停止 ───────────────────────────────────\n    [webkit] › tests/e2e/timer.spec.ts:85:1 › AC-05 リセットボタンでリセット ───────────────────────────────────\n    [webkit] › tests/e2e/timer.spec.ts:120:1 › AC-06 時間終了で通知と done 表示 ──────────────────────────────\n    [webkit] › tests/e2e/timer.spec.ts:145:1 › AC-07 minutes 変更中にカウント中なら一時停止 ───────────────────────\n  1 passed (34.5s)\n"
+    },
+    {
+      "phase": "feedback",
+      "attempts": 3,
+      "gate": false,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 45771,
+      "lastError": "lint (--phase feedback) が NG：\nrequirements.md:30: [history] 末尾に「## 改訂履歴」がない"
+    }
+  ],
+  "regradedAt": "2026-11-14T05:39:56.528Z"
+}
