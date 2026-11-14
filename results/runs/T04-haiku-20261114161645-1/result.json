@@ -1,0 +1,103 @@
+{
+  "id": "T04-haiku-20261114161645-1",
+  "task": "T04-habit",
+  "model": "haiku",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T16:26:05.947Z",
+  "acceptance": {
+    "passed": 6,
+    "total": 10,
+    "failed": [
+      "毎日続けると連続日数が増える",
+      "1日空くと連続は 0 に戻り、再開すると 1 から",
+      "[意図] 今日まだチェックしていなくても、昨日までの連続は途切れない",
+      "[意図] 日付の変わり目は深夜 0:00（21時→翌1時で翌日になる）"
+    ]
+  },
+  "passRate": 0.6,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 7,
+  "docLines": {
+    "spec.md": 129,
+    "design.md": 60,
+    "tasks.md": 14
+  },
+  "costUsd": 0.7477,
+  "tokensIn": 2318856,
+  "tokensOut": 52648,
+  "minutes": 8.7,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.048770799999999996,
+      "tokensIn": 75148,
+      "tokensOut": 3822,
+      "durationMs": 39676
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0648273,
+      "tokensIn": 115251,
+      "tokensOut": 5959,
+      "durationMs": 52414
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.05591099999999999,
+      "tokensIn": 118847,
+      "tokensOut": 3777,
+      "durationMs": 40134
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0591336,
+      "tokensIn": 120220,
+      "tokensOut": 4440,
+      "durationMs": 42711
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.16854609999999995,
+      "tokensIn": 670000,
+      "tokensOut": 10768,
+      "durationMs": 94996
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.2951642,
+      "tokensIn": 1097493,
+      "tokensOut": 20121,
+      "durationMs": 213419
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0553195,
+      "tokensIn": 121897,
+      "tokensOut": 3761,
+      "durationMs": 37711
+    }
+  ]
+}

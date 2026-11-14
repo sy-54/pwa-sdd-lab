@@ -1,0 +1,27 @@
+{
+  "id": "T03-sonnet-20261114143149-1",
+  "task": "T03-photo-memo",
+  "model": "sonnet",
+  "invalid": "利用上限に達した（You've hit your session limit · resets 1am (Asia/Tokyo)）",
+  "finishedAt": "2026-11-14T14:33:45.239Z",
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.15656859999999997,
+      "tokensIn": 101770,
+      "tokensOut": 2361,
+      "durationMs": 35757
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": false,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 0
+    }
+  ]
+}

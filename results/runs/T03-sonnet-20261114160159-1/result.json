@@ -1,0 +1,98 @@
+{
+  "id": "T03-sonnet-20261114160159-1",
+  "task": "T03-photo-memo",
+  "model": "sonnet",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T16:16:45.633Z",
+  "acceptance": {
+    "passed": 9,
+    "total": 9,
+    "failed": []
+  },
+  "passRate": 1,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 11,
+  "docLines": {
+    "spec.md": 94,
+    "design.md": 39,
+    "tasks.md": 16
+  },
+  "costUsd": 3.5567,
+  "tokensIn": 4762413,
+  "tokensOut": 61726,
+  "minutes": 14.3,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1669014,
+      "tokensIn": 71851,
+      "tokensOut": 1681,
+      "durationMs": 31152
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.4197872,
+      "tokensIn": 252635,
+      "tokensOut": 11188,
+      "durationMs": 143757
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.202023,
+      "tokensIn": 181978,
+      "tokensOut": 2742,
+      "durationMs": 44139
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.20094109999999998,
+      "tokensIn": 155167,
+      "tokensOut": 3523,
+      "durationMs": 47073
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 1.1878485,
+      "tokensIn": 2210508,
+      "tokensOut": 16858,
+      "durationMs": 252112
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 1.1220638,
+      "tokensIn": 1599461,
+      "tokensOut": 22079,
+      "durationMs": 286063
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.2570942,
+      "tokensIn": 290813,
+      "tokensOut": 3655,
+      "durationMs": 55255
+    }
+  ]
+}

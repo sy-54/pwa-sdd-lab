@@ -1,0 +1,98 @@
+{
+  "id": "T04-sonnet-20261114161020-1",
+  "task": "T04-habit",
+  "model": "sonnet",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T16:24:05.205Z",
+  "acceptance": {
+    "passed": 10,
+    "total": 10,
+    "failed": []
+  },
+  "passRate": 1,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 11,
+  "docLines": {
+    "spec.md": 97,
+    "design.md": 42,
+    "tasks.md": 16
+  },
+  "costUsd": 3.1817,
+  "tokensIn": 4264114,
+  "tokensOut": 58101,
+  "minutes": 13.3,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.13696599999999998,
+      "tokensIn": 73513,
+      "tokensOut": 3308,
+      "durationMs": 52042
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.3886516,
+      "tokensIn": 245838,
+      "tokensOut": 10927,
+      "durationMs": 146921
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.2149724,
+      "tokensIn": 182111,
+      "tokensOut": 3438,
+      "durationMs": 51640
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.14665730000000002,
+      "tokensIn": 122344,
+      "tokensOut": 2212,
+      "durationMs": 33536
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 1.4403829,
+      "tokensIn": 2735271,
+      "tokensOut": 22314,
+      "durationMs": 306906
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.6140531,
+      "tokensIn": 659248,
+      "tokensOut": 12446,
+      "durationMs": 155328
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.23997559999999996,
+      "tokensIn": 245789,
+      "tokensOut": 3456,
+      "durationMs": 51675
+    }
+  ]
+}

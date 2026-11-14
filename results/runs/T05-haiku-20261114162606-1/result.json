@@ -1,0 +1,107 @@
+{
+  "id": "T05-haiku-20261114162606-1",
+  "task": "T05-expense",
+  "model": "haiku",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T16:32:55.746Z",
+  "acceptance": {
+    "passed": 2,
+    "total": 10,
+    "failed": [
+      "最初は記録がなく、合計は 0",
+      "記録すると一覧と今月の合計に反映される（3桁区切り）",
+      "再読み込みしても記録と合計が残る",
+      "[意図] 削除は確認（SDK の確認ダイアログ）の後に消え、合計も減る",
+      "[意図] 新しい記録が一番上",
+      "[意図] 不正な金額（空・0・負・小数・文字）は追加されず、トーストで知らせる",
+      "[意図] 追加後は金額欄が空になり、分類は直前の選択のまま。最初の分類は食費",
+      "[意図] 月が変わると、一覧も合計も今月の分だけになる"
+    ]
+  },
+  "passRate": 0.2,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 5,
+  "docLines": {
+    "spec.md": 100,
+    "design.md": 43,
+    "tasks.md": 10
+  },
+  "costUsd": 0.5689,
+  "tokensIn": 1675853,
+  "tokensOut": 38005,
+  "minutes": 6.1,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.039765800000000004,
+      "tokensIn": 73400,
+      "tokensOut": 2569,
+      "durationMs": 28771
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.07624249999999999,
+      "tokensIn": 168056,
+      "tokensOut": 6181,
+      "durationMs": 56972
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0529019,
+      "tokensIn": 104978,
+      "tokensOut": 3421,
+      "durationMs": 33212
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0574409,
+      "tokensIn": 113621,
+      "tokensOut": 4783,
+      "durationMs": 47025
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.168476,
+      "tokensIn": 680228,
+      "tokensOut": 10310,
+      "durationMs": 89456
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.11643900000000001,
+      "tokensIn": 392260,
+      "tokensOut": 7152,
+      "durationMs": 74447
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0576702,
+      "tokensIn": 143310,
+      "tokensOut": 3589,
+      "durationMs": 37407
+    }
+  ]
+}

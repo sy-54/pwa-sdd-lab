@@ -1,0 +1,27 @@
+{
+  "id": "T03-haiku-20261114143204-1",
+  "task": "T03-photo-memo",
+  "model": "haiku",
+  "invalid": "利用上限に達した（You've hit your session limit · resets 1am (Asia/Tokyo)）",
+  "finishedAt": "2026-11-14T14:33:53.562Z",
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0600327,
+      "tokensIn": 62932,
+      "tokensOut": 5651,
+      "durationMs": 51364
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": false,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 0
+    }
+  ]
+}

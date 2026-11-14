@@ -1,0 +1,98 @@
+{
+  "id": "T02-sonnet-20261114141644-1",
+  "task": "T02-todo",
+  "model": "sonnet",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T14:24:45.760Z",
+  "acceptance": {
+    "passed": 9,
+    "total": 9,
+    "failed": []
+  },
+  "passRate": 1,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 6,
+  "docLines": {
+    "spec.md": 83,
+    "design.md": 36,
+    "tasks.md": 11
+  },
+  "costUsd": 1.9406,
+  "tokensIn": 2196238,
+  "tokensOut": 31426,
+  "minutes": 7.6,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1747106,
+      "tokensIn": 89265,
+      "tokensOut": 1783,
+      "durationMs": 35142
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.27244599999999997,
+      "tokensIn": 208301,
+      "tokensOut": 6100,
+      "durationMs": 84262
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.21644880000000002,
+      "tokensIn": 210583,
+      "tokensOut": 2838,
+      "durationMs": 43351
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.14315129999999998,
+      "tokensIn": 137773,
+      "tokensOut": 2122,
+      "durationMs": 34926
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.5569097000000001,
+      "tokensIn": 853520,
+      "tokensOut": 9845,
+      "durationMs": 127174
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.42685259999999997,
+      "tokensIn": 500328,
+      "tokensOut": 6998,
+      "durationMs": 99143
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.15011069999999999,
+      "tokensIn": 196468,
+      "tokensOut": 1740,
+      "durationMs": 32963
+    }
+  ]
+}

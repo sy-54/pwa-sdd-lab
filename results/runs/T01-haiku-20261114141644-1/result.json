@@ -1,0 +1,72 @@
+{
+  "id": "T01-haiku-20261114141644-1",
+  "task": "T01-timer",
+  "model": "haiku",
+  "invalid": "利用上限に達した（You've hit your session limit · resets 1am (Asia/Tokyo)）",
+  "finishedAt": "2026-11-14T14:33:42.885Z",
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.053858300000000005,
+      "tokensIn": 41636,
+      "tokensOut": 3383,
+      "durationMs": 33680
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0549593,
+      "tokensIn": 116360,
+      "tokensOut": 3840,
+      "durationMs": 40049
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0882039,
+      "tokensIn": 154953,
+      "tokensOut": 8146,
+      "durationMs": 72381
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1075001,
+      "tokensIn": 367774,
+      "tokensOut": 5966,
+      "durationMs": 63039
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.064907,
+      "tokensIn": 187715,
+      "tokensOut": 4266,
+      "durationMs": 42562
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.24427999999999997,
+      "tokensIn": 964411,
+      "tokensOut": 17103,
+      "durationMs": 137442
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": false,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 0
+    }
+  ]
+}

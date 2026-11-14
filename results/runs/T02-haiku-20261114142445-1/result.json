@@ -1,0 +1,98 @@
+{
+  "id": "T02-haiku-20261114142445-1",
+  "task": "T02-todo",
+  "model": "haiku",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T14:31:49.515Z",
+  "acceptance": {
+    "passed": 9,
+    "total": 9,
+    "failed": []
+  },
+  "passRate": 1,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 7,
+  "docLines": {
+    "spec.md": 134,
+    "design.md": 34,
+    "tasks.md": 12
+  },
+  "costUsd": 0.6038,
+  "tokensIn": 1757822,
+  "tokensOut": 41336,
+  "minutes": 6.5,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0469851,
+      "tokensIn": 60806,
+      "tokensOut": 3788,
+      "durationMs": 35193
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.07180600000000001,
+      "tokensIn": 120614,
+      "tokensOut": 6483,
+      "durationMs": 61860
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.04630609999999999,
+      "tokensIn": 83174,
+      "tokensOut": 2794,
+      "durationMs": 29057
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.060422800000000006,
+      "tokensIn": 123787,
+      "tokensOut": 4467,
+      "durationMs": 42153
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.19126759999999998,
+      "tokensIn": 817536,
+      "tokensOut": 11705,
+      "durationMs": 102335
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1147453,
+      "tokensIn": 353077,
+      "tokensOut": 7782,
+      "durationMs": 77049
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.07231100000000001,
+      "tokensIn": 198828,
+      "tokensOut": 4317,
+      "durationMs": 45320
+    }
+  ]
+}
