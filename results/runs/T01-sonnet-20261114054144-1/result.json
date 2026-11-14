@@ -1,0 +1,99 @@
+{
+  "id": "T01-sonnet-20261114054144-1",
+  "task": "T01-timer",
+  "model": "sonnet",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T05:53:33.840Z",
+  "acceptance": {
+    "passed": 9,
+    "total": 9,
+    "failed": []
+  },
+  "passRate": 1,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 8,
+  "docLines": {
+    "spec.md": 81,
+    "design.md": 43,
+    "tasks.md": 13
+  },
+  "costUsd": 2.6743,
+  "tokensIn": 3350474,
+  "tokensOut": 49145,
+  "minutes": 11.5,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.177563,
+      "tokensIn": 71319,
+      "tokensOut": 2339,
+      "durationMs": 38062
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.28863079999999997,
+      "tokensIn": 183476,
+      "tokensOut": 8566,
+      "durationMs": 112667
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.27121169999999994,
+      "tokensIn": 183154,
+      "tokensOut": 6386,
+      "durationMs": 79613
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.133914,
+      "tokensIn": 119539,
+      "tokensOut": 1766,
+      "durationMs": 27338
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.7531428,
+      "tokensIn": 1281079,
+      "tokensOut": 12358,
+      "durationMs": 160583
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.7896115,
+      "tokensIn": 1195092,
+      "tokensOut": 13760,
+      "durationMs": 209598
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.26017749999999995,
+      "tokensIn": 316815,
+      "tokensOut": 3970,
+      "durationMs": 60164
+    }
+  ],
+  "regradedAt": "2026-11-14T06:26:15.335Z"
+}

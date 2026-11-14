@@ -1,0 +1,98 @@
+{
+  "id": "T03-haiku-20261114055402-1",
+  "task": "T03-photo-memo",
+  "model": "haiku",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T06:06:08.035Z",
+  "acceptance": {
+    "passed": 9,
+    "total": 9,
+    "failed": []
+  },
+  "passRate": 1,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 7,
+  "docLines": {
+    "spec.md": 112,
+    "design.md": 65,
+    "tasks.md": 11
+  },
+  "costUsd": 1.0168,
+  "tokensIn": 3400083,
+  "tokensOut": 74417,
+  "minutes": 11.7,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.039861100000000003,
+      "tokensIn": 59219,
+      "tokensOut": 2871,
+      "durationMs": 28750
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.06635289999999999,
+      "tokensIn": 116382,
+      "tokensOut": 5847,
+      "durationMs": 54513
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0670497,
+      "tokensIn": 179535,
+      "tokensOut": 4520,
+      "durationMs": 46847
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.09587490000000001,
+      "tokensIn": 185457,
+      "tokensOut": 8543,
+      "durationMs": 66817
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.20097520000000005,
+      "tokensIn": 835587,
+      "tokensOut": 12544,
+      "durationMs": 111997
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.49426459999999994,
+      "tokensIn": 1885294,
+      "tokensOut": 37032,
+      "durationMs": 361811
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0524168,
+      "tokensIn": 138609,
+      "tokensOut": 3060,
+      "durationMs": 30484
+    }
+  ]
+}

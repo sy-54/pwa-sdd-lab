@@ -41,7 +41,7 @@ test('一時停止で止まり、開始で続きから再開する', async ({ pa
   await expect(time(page)).toHaveText('01:45');
 });
 
-test('リセットで止まり、指定した分数に戻る', async ({ page }) => {
+test('[意図] リセットで止まり、指定した分数に戻る', async ({ page }) => {
   await setMinutes(page, '2');
   await page.getByTestId('start').click();
   await sec(page, 10);

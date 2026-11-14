@@ -26,6 +26,6 @@
 ## UI契約
 - エントリ：`apps/todo/index.html`（`apps/todo/manifest.json` も置く）
 - ルート要素：`data-testid="app-root"`
-- 入力欄：`data-testid="new-todo"`、追加ボタン：`data-testid="add"`
+- 入力欄：`data-testid="new-todo"`、追加ボタン：`data-testid="add"`。入力欄で Enter を押しても追加される
 - 各項目：`data-testid="todo-item"`。その中に `"todo-text"`（内容）、`"todo-toggle"`（`input type="checkbox"`）、`"todo-delete"`（ボタン）
 - 残り件数：`data-testid="todo-count"`（テキストは数字のみ）

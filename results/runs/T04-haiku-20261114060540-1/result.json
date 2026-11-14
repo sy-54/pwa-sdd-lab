@@ -1,0 +1,102 @@
+{
+  "id": "T04-haiku-20261114060540-1",
+  "task": "T04-habit",
+  "model": "haiku",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T06:23:08.550Z",
+  "acceptance": {
+    "passed": 7,
+    "total": 10,
+    "failed": [
+      "今日チェックすると連続 1 日、外すと 0 日",
+      "[意図] 今日まだチェックしていなくても、昨日までの連続は途切れない",
+      "[意図] 日付の変わり目は深夜 0:00（21時→翌1時で翌日になる）"
+    ]
+  },
+  "passRate": 0.7,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 8,
+  "docLines": {
+    "spec.md": 105,
+    "design.md": 43,
+    "tasks.md": 16
+  },
+  "costUsd": 1.5376,
+  "tokensIn": 6156691,
+  "tokensOut": 104911,
+  "minutes": 16.9,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0633036,
+      "tokensIn": 62158,
+      "tokensOut": 6236,
+      "durationMs": 54499
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.07790549999999999,
+      "tokensIn": 164437,
+      "tokensOut": 6519,
+      "durationMs": 63837
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0563967,
+      "tokensIn": 150007,
+      "tokensOut": 3363,
+      "durationMs": 36134
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.08810119999999999,
+      "tokensIn": 167382,
+      "tokensOut": 7924,
+      "durationMs": 58619
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.37126800000000004,
+      "tokensIn": 1734604,
+      "tokensOut": 22428,
+      "durationMs": 186015
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.8205052000000002,
+      "tokensIn": 3719188,
+      "tokensOut": 54506,
+      "durationMs": 573008
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.060072499999999994,
+      "tokensIn": 158915,
+      "tokensOut": 3935,
+      "durationMs": 40652
+    }
+  ]
+}

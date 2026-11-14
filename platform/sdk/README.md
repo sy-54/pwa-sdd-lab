@@ -55,6 +55,8 @@ let items = await storage.get('items', []);
 - `notify.send` と `camera.takePhoto` は、ボタンを押したときの処理の中から呼ぶ（iOS の制約）
 - 通知は、アプリを開いている間にだけ出せる。時刻指定や、閉じている間の通知はできない
 - 写真は Blob のまま `storage.set` し、表示は `img.src = URL.createObjectURL(blob)`
+- 「今日」の日付は端末のローカル時刻で作る（`getFullYear()` / `getMonth()` / `getDate()`）。`toISOString()` は UTC なので、日本では朝9時まで前日の日付になる
+- 日付や時間で変わる値（連続日数、今月の合計、残り時間）は、保存した数値をそのまま出さず、**表示のたびに今の日時から計算し直す**
 - リンクや import はすべて相対パス（サブパスで公開されるため。`/` で始めない）
 
 ## 見た目（sdk.css）

@@ -81,7 +81,7 @@ test('[意図] 空欄・空白だけでは追加されず、前後の空白は�
   expect(await page.getByTestId('todo-text').first().textContent()).toBe('牛乳');
 });
 
-test('[意図] Enter キーでも追加でき、入力欄は空になる', async ({ page }) => {
+test('Enter キーでも追加でき、[意図] 入力欄は空になる', async ({ page }) => {
   await page.getByTestId('new-todo').fill('牛乳を買う');
   await page.getByTestId('new-todo').press('Enter');
   await expect(items(page)).toHaveCount(1);

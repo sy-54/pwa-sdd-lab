@@ -1,0 +1,100 @@
+{
+  "id": "T02-sonnet-20261114054144-1",
+  "task": "T02-todo",
+  "model": "sonnet",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T05:53:44.995Z",
+  "acceptance": {
+    "passed": 8,
+    "total": 9,
+    "failed": [
+      "[意図] Enter キーでも追加でき、入力欄は空になる"
+    ]
+  },
+  "passRate": 0.8888888888888888,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 8,
+  "docLines": {
+    "spec.md": 67,
+    "design.md": 35,
+    "tasks.md": 13
+  },
+  "costUsd": 2.882,
+  "tokensIn": 3741755,
+  "tokensOut": 53434,
+  "minutes": 11.7,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1646985,
+      "tokensIn": 70895,
+      "tokensOut": 1711,
+      "durationMs": 29569
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.36189190000000004,
+      "tokensIn": 243324,
+      "tokensOut": 10151,
+      "durationMs": 127429
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1730417,
+      "tokensIn": 168979,
+      "tokensOut": 2034,
+      "durationMs": 40015
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.11575720000000002,
+      "tokensIn": 91126,
+      "tokensOut": 2105,
+      "durationMs": 31801
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 1.4731078,
+      "tokensIn": 2489599,
+      "tokensOut": 28122,
+      "durationMs": 335984
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.4329625,
+      "tokensIn": 510709,
+      "tokensOut": 6968,
+      "durationMs": 92244
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1605887,
+      "tokensIn": 167123,
+      "tokensOut": 2343,
+      "durationMs": 43875
+    }
+  ]
+}
