@@ -12,7 +12,8 @@ export const homeUrl = new URL('../', import.meta.url).href;
 
 /** Service Worker を登録する（オフライン起動用）。SW がない環境では何もしない。 */
 export function registerServiceWorker() {
-  navigator.serviceWorker?.register(new URL('../sw.js', import.meta.url)).catch(() => {});
+  // updateViaCache: 'none' … precache.js を HTTP キャッシュから読まず、新しい版を確実に検知する
+  navigator.serviceWorker?.register(new URL('../sw.js', import.meta.url), { updateViaCache: 'none' }).catch(() => {});
 }
 
 /**
