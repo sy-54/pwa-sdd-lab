@@ -17,5 +17,5 @@
 - [x] T11: sw.js（precache・キャッシュ優先・次回起動で更新）と offline.spec (AC-05)
 - [x] T12: sdk/README.md（ミニアプリ作者向け API 一覧と使用例）を書く (setup)
 - [x] T13: 全 AC の E2E を通し、lint --phase e2e を OK にする (AC-01, AC-02, AC-03, AC-04, AC-05, AC-06, AC-07, AC-08, AC-09, AC-10, AC-11, AC-12, AC-13, AC-14)
-- [ ] T14: .github/workflows/deploy.yml を書き、GitHub に push して Pages へ公開する (setup)
+- [x] T14: .github/workflows/deploy.yml を書き、GitHub に push して Pages へ公開する (setup)
 - [ ] T15: iPhone のホーム画面に追加し、demo の保存・通知・カメラを実機で確認する (setup)

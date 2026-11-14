@@ -61,9 +61,10 @@ function prepare(work: string, taskDir: string) {
   mkdirSync(join(work, 'tools/lint'), { recursive: true });
   for (const f of ['lint.ts', 'cli.ts']) cpSync(join(REPO, 'harness/lint', f), join(work, 'tools/lint', f));
   cpSync(join(taskDir, 'requirements.md'), join(work, 'specs/requirements.md'));
-  // 課題が platform（ランチャー＋SDK）を使う場合は task.json の "platform": true で同梱する
+  // task.json: { "platform": true } で SDK を同梱、seed/ があれば既存コードとして上書きコピーする（改修課題）
   const meta = existsSync(join(taskDir, 'task.json')) ? JSON.parse(readFileSync(join(taskDir, 'task.json'), 'utf8')) : {};
-  if (meta.platform) for (const d of ['sdk', 'launcher']) if (existsSync(join(REPO, 'platform', d))) cpSync(join(REPO, 'platform', d), join(work, d), { recursive: true });
+  if (meta.platform) cpSync(join(REPO, 'platform/sdk'), join(work, 'sdk'), { recursive: true });
+  if (existsSync(join(taskDir, 'seed'))) cpSync(join(taskDir, 'seed'), work, { recursive: true });
   symlinkSync(join(REPO, 'node_modules'), join(work, 'node_modules'));
   writeFileSync(join(work, '.gitignore'), 'node_modules\ntest-results\nplaywright-report\n');
   sh(work, 'git init -q -b main && git add -A && git -c user.name=harness -c user.email=harness@local commit -qm "初期状態"');
