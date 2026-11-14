@@ -1,0 +1,100 @@
+{
+  "id": "T07-haiku-20261114120548-1",
+  "task": "T07-flashcards",
+  "model": "haiku",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-14T12:16:06.628Z",
+  "acceptance": {
+    "passed": 9,
+    "total": 10,
+    "failed": [
+      "[意図] めくる前は「覚えた」「まだ」を押せない"
+    ]
+  },
+  "passRate": 0.9,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 4,
+  "docLines": {
+    "spec.md": 138,
+    "design.md": 60,
+    "tasks.md": 11
+  },
+  "costUsd": 0.8298,
+  "tokensIn": 2547364,
+  "tokensOut": 59980,
+  "minutes": 9.5,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0470414,
+      "tokensIn": 43280,
+      "tokensOut": 4549,
+      "durationMs": 41873
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0746739,
+      "tokensIn": 123246,
+      "tokensOut": 6487,
+      "durationMs": 61318
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0583743,
+      "tokensIn": 143021,
+      "tokensOut": 3592,
+      "durationMs": 40119
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.09034529999999999,
+      "tokensIn": 112966,
+      "tokensOut": 8836,
+      "durationMs": 73713
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.2193426,
+      "tokensIn": 780097,
+      "tokensOut": 15506,
+      "durationMs": 135051
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.25692790000000004,
+      "tokensIn": 1082523,
+      "tokensOut": 15689,
+      "durationMs": 161051
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.083099,
+      "tokensIn": 262231,
+      "tokensOut": 5321,
+      "durationMs": 58952
+    }
+  ]
+}
