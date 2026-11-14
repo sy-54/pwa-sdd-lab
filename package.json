@@ -6,7 +6,10 @@
     "test": "vitest run",
     "lint:sdd": "tsx harness/lint/cli.ts",
     "harness": "tsx harness/run.ts",
-    "summary": "tsx harness/grade/summary.ts"
+    "summary": "tsx harness/grade/summary.ts",
+    "build:platform": "tsx platform/scripts/build.ts",
+    "e2e:platform": "playwright test -c platform/playwright.config.ts",
+    "check:platform": "npm run build:platform && vitest run platform && npm run e2e:platform"
   },
   "devDependencies": {
     "@playwright/test": "^1.56.0",

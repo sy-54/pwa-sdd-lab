@@ -5,3 +5,4 @@ playwright-report/
 results/runs/*/work/
 results/runs/*/logs/
 results/runs/*/acceptance.json
+platform/dist/
