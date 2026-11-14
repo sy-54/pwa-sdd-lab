@@ -97,8 +97,11 @@ async function runOne(taskName: string, model: string, n: number, stakeholderMod
       logFile: join(logs, `${String(++seq).padStart(2, '0')}-${name}.jsonl`),
       appendSystem: rules, tools: TOOLS, allowed: ALLOWED, disallowed: DISALLOWED, maxBudgetUsd: 5,
     });
+  const seeded = existsSync(join(taskDir, 'seed'));
   const intro = (doc: string) =>
-    `これは自動実行です（人間は応答しません。承認待ちで止まらず、指示された範囲を最後までやり切ってください）。\n最初に sdd/SKILL.md と sdd/phases/${doc} を読み、その手順に従ってください。\n\n`;
+    `これは自動実行です（人間は応答しません。承認待ちで止まらず、指示された範囲を最後までやり切ってください）。\n最初に sdd/SKILL.md と sdd/phases/${doc} を読み、その手順に従ってください。\n` +
+    (seeded ? 'これは既存アプリへの改修です。specs/ の文書・コード・テストはすでにあります。requirements.md の変更点に合わせて、既存の文書とコードの該当箇所だけを更新・追記してください（全文を書き直さない。既存の AC とテストは残す）。\n' : '') +
+    '\n';
 
   /** フェーズを実行し、ゲートを通るまで最大 MAX_ATTEMPTS 回やり直す */
   async function phase(name: string, prompt: string, gate: () => string | null): Promise<boolean> {
