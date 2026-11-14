@@ -1,0 +1,39 @@
+# main への push で、検証（manifest・単体・E2E）を通ったものだけを GitHub Pages へ公開する
+name: deploy
+on:
+  push:
+    branches: [main]
+    paths: ['platform/**', 'harness/template/serve.mjs', 'package.json', 'package-lock.json', '.github/workflows/deploy.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  check-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps webkit
+      - name: manifest 検証 → 単体テスト → E2E
+        run: npm run check:platform
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: platform/dist
+      - id: deploy
+        uses: actions/deploy-pages@v4
