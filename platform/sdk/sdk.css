@@ -70,11 +70,11 @@ li, .card { background: var(--card); border: 1px solid var(--border); border-rad
 .sdk-header a { text-decoration: none; min-height: 44px; display: flex; align-items: center; padding-right: 8px; white-space: nowrap; }
 .sdk-header h1 { font-size: 1.05rem; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .sdk-toast {
-  position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 30;
+  position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 2147483647; /* アプリ側のモーダルより必ず前に出す */
   max-width: calc(100vw - 32px); padding: 12px 18px; border-radius: 999px; background: var(--fg); color: var(--bg); font-size: 0.95rem;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
-.sdk-overlay { position: fixed; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(0, 0, 0, 0.45); }
+.sdk-overlay { position: fixed; inset: 0; z-index: 2147483646; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(0, 0, 0, 0.45); }
 .sdk-dialog { width: 100%; max-width: 360px; display: flex; flex-direction: column; gap: 16px; padding: 20px; border-radius: var(--radius); background: var(--card); color: var(--fg); }
 .sdk-dialog .row > button { flex: 1; }
 .card { display: flex; flex-direction: column; gap: 10px; }

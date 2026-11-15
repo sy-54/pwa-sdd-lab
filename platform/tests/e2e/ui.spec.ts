@@ -33,6 +33,20 @@ for (const [button, expected] of [['sdk-confirm-ok', true], ['sdk-confirm-cancel
   });
 }
 
+test('AC-10 confirm とトーストは、アプリ側のモーダル（z-index: 100）より前に出る', async ({ page }) => {
+  await page.evaluate(async () => {
+    const { ui } = await import('/sdk/sdk.js');
+    const modal = Object.assign(document.createElement('div'), { textContent: 'アプリのフォーム' });
+    modal.style.cssText = 'position:fixed;inset:0;z-index:100;background:#fff';
+    document.body.append(modal);
+    ui.toast('前に出る');
+    ui.confirm('消しますか？').then((v) => ((window as any).answer = v));
+  });
+  await page.getByTestId('sdk-toast').click({ timeout: 2000 }); // 覆われていれば押せない
+  await page.getByTestId('sdk-confirm-cancel').click({ timeout: 2000 });
+  expect(await page.evaluate(() => (window as any).answer)).toBe(false);
+});
+
 test('AC-02 mountApp はヘッダーとホームへのリンクを入れる', async ({ page, baseURL }) => {
   await page.evaluate(async () => (await import('/sdk/sdk.js')).mountApp({ title: 'テスト' }));
   await expect(page.getByTestId('sdk-header')).toContainText('テスト');
