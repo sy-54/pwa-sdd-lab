@@ -1,0 +1,6 @@
+{
+  "id": "meisai-navi",
+  "name": "明細節約ナビ",
+  "icon": "🧾",
+  "description": "楽天カードの明細CSVから支出の割合と節約ポイントを表示"
+}
