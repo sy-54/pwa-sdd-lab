@@ -1,0 +1,99 @@
+{
+  "id": "T07-haiku-20261115031446-1",
+  "task": "T07-flashcards",
+  "model": "haiku",
+  "stakeholderModel": "sonnet",
+  "rev": "565479a",
+  "finishedAt": "2026-11-15T03:27:29.366Z",
+  "acceptance": {
+    "passed": 10,
+    "total": 10,
+    "failed": []
+  },
+  "passRate": 1,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 10,
+  "docLines": {
+    "spec.md": 127,
+    "design.md": 35,
+    "tasks.md": 13
+  },
+  "costUsd": 1.128,
+  "tokensIn": 3646486,
+  "tokensOut": 85445,
+  "minutes": 12.2,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.05212989999999999,
+      "tokensIn": 55619,
+      "tokensOut": 2847,
+      "durationMs": 39738
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0880173,
+      "tokensIn": 187101,
+      "tokensOut": 7141,
+      "durationMs": 66660
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.05462320000000001,
+      "tokensIn": 101651,
+      "tokensOut": 3859,
+      "durationMs": 36625
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0578615,
+      "tokensIn": 81191,
+      "tokensOut": 5036,
+      "durationMs": 39719
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.30888319999999997,
+      "tokensIn": 1139065,
+      "tokensOut": 23739,
+      "durationMs": 169381
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.5085662,
+      "tokensIn": 1920203,
+      "tokensOut": 39365,
+      "durationMs": 346146
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.05796169999999999,
+      "tokensIn": 161656,
+      "tokensOut": 3458,
+      "durationMs": 36353
+    }
+  ]
+}

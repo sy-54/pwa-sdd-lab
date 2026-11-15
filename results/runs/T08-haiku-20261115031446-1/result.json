@@ -1,0 +1,112 @@
+{
+  "id": "T08-haiku-20261115031446-1",
+  "task": "T08-books",
+  "model": "haiku",
+  "stakeholderModel": "sonnet",
+  "rev": "565479a",
+  "finishedAt": "2026-11-15T03:29:05.494Z",
+  "acceptance": {
+    "passed": 9,
+    "total": 12,
+    "failed": [
+      "manifest.json がある",
+      "[意図] 新しく登録した本が一番上。初期の状態は「読みたい」で、編集しても順番は変わらない",
+      "[意図] 評価は「読んだ」の本だけ。他の状態に戻すと評価は消える"
+    ]
+  },
+  "passRate": 0.75,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 2,
+  "commits": 5,
+  "docLines": {
+    "spec.md": 134,
+    "design.md": 72,
+    "tasks.md": 17
+  },
+  "costUsd": 1.0898,
+  "tokensIn": 3031848,
+  "tokensOut": 83542,
+  "minutes": 13.5,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0489912,
+      "tokensIn": 41544,
+      "tokensOut": 2560,
+      "durationMs": 36107
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.091697,
+      "tokensIn": 125441,
+      "tokensOut": 9475,
+      "durationMs": 80719
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1687986,
+      "tokensIn": 326555,
+      "tokensOut": 15918,
+      "durationMs": 125358
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0823805,
+      "tokensIn": 188050,
+      "tokensOut": 6214,
+      "durationMs": 54438
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1067814,
+      "tokensIn": 216004,
+      "tokensOut": 9483,
+      "durationMs": 77471
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.19350680000000006,
+      "tokensIn": 681997,
+      "tokensOut": 13617,
+      "durationMs": 104347
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.3276089999999999,
+      "tokensIn": 1276089,
+      "tokensOut": 21929,
+      "durationMs": 281362
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0700821,
+      "tokensIn": 176168,
+      "tokensOut": 4346,
+      "durationMs": 49165
+    }
+  ]
+}

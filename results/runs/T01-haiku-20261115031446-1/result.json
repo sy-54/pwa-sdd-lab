@@ -1,0 +1,108 @@
+{
+  "id": "T01-haiku-20261115031446-1",
+  "task": "T01-timer",
+  "model": "haiku",
+  "stakeholderModel": "sonnet",
+  "rev": "565479a",
+  "finishedAt": "2026-11-15T03:27:05.868Z",
+  "acceptance": {
+    "passed": 2,
+    "total": 9,
+    "failed": [
+      "manifest.json がある",
+      "分を指定して開始すると 1 秒ずつ減る",
+      "一時停止で止まり、開始で続きから再開する",
+      "時間になると 00:00 で止まり、終了が表示される",
+      "[意図] 最初は 3 分がセットされている",
+      "[意図] 時間になったら SDK の通知で知らせる（テスト環境ではトースト）",
+      "[意図] 終了後にリセットすると終了の表示が消える"
+    ]
+  },
+  "passRate": 0.2222222222222222,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 7,
+  "docLines": {
+    "spec.md": 103,
+    "design.md": 50,
+    "tasks.md": 11
+  },
+  "costUsd": 0.8979,
+  "tokensIn": 2536151,
+  "tokensOut": 72147,
+  "minutes": 11.4,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.058107700000000005,
+      "tokensIn": 55828,
+      "tokensOut": 3769,
+      "durationMs": 46895
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.10383790000000001,
+      "tokensIn": 155707,
+      "tokensOut": 10361,
+      "durationMs": 98197
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0501109,
+      "tokensIn": 83562,
+      "tokensOut": 3481,
+      "durationMs": 36158
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.05543819999999999,
+      "tokensIn": 100100,
+      "tokensOut": 4333,
+      "durationMs": 38209
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.2272839,
+      "tokensIn": 858119,
+      "tokensOut": 16120,
+      "durationMs": 129525
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.40313160000000003,
+      "tokensIn": 1282835,
+      "tokensOut": 34083,
+      "durationMs": 294936
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "durationMs": 42830,
+      "lastError": "claude: exit 0"
+    }
+  ]
+}
