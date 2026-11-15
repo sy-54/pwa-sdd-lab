@@ -12,7 +12,7 @@
 - `apps/meisai-navi/csv.js`：`decodeText(buffer)`（UTF-8→だめなら Shift_JIS）、`parseCsv(text)`、`readStatement(text)`（明細の配列を返す。読めなければ理由つきの例外）
 - `apps/meisai-navi/classify.js`：`normalize(name)`、`shopKey(name)`、キーワード表、`autoClassify(name)`（`{ cat, tag }`。tag は `conv`／`deli`／`cafe`／`tel`／`ec` など節約ポイント用の細目）
 - `apps/meisai-navi/model.js`：状態の操作。`initialState()`、`repairState(value)`、`putFile`、`removeFile`、`addCategory`、`renameCategory`、`deleteCategory`、`setRule`、`resolveRows(state)`（各明細に費目・tag・年月を付ける）、`summarize(rows, cats)`（合計、費目別、店別、月別）
-- `apps/meisai-navi/tips.js`：`buildTips(rows, allRows, month, months)`。spec の節約ポイント表をそのまま実装し、`{ kind, title, body, saving }` の配列を返す
+- `apps/meisai-navi/tips.js`：`buildTips({ rows, allRows, month, months, cats })`。spec の節約ポイント表をそのまま実装し、`{ kind, title, body, saving }` の配列を返す
 - `apps/meisai-navi/format.js`：`yen(n)`（数字とカンマのみ）、`share(part, total)`（小数1桁と `%`）、月の表示名
 
 ## データモデル
