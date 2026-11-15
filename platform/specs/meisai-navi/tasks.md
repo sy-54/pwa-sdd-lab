@@ -8,7 +8,7 @@
 - [x] T02: format.js の yen／share／monthLabel を単体テストから作る (AC-01, AC-02)
 - [x] T03: csv.js の parseCsv／readStatement／decodeText を単体テストから作る。Shift_JIS のバイト列を読めることを確かめる (AC-01, AC-12, AC-13)
 - [x] T04: classify.js の normalize／shopKey／autoClassify とキーワード表を単体テストから作る (AC-02)
-- [ ] T05: model.js の initialState／repairState／putFile／removeFile／setRule／resolveRows／summarize を単体テストから作る (AC-02, AC-03, AC-05, AC-06, AC-07, AC-08)
+- [x] T05: model.js の initialState／repairState／putFile／removeFile／setRule／resolveRows／summarize を単体テストから作る (AC-02, AC-03, AC-05, AC-06, AC-07, AC-08)
 - [ ] T06: model.js の addCategory／renameCategory／deleteCategory を単体テストから作る (AC-10, AC-11, AC-15, AC-16)
 - [ ] T07: tips.js の buildTips を単体テストから作る (AC-04)
 - [ ] T08: main.js でデータ画面（読み込み・ファイル削除・すべて消す・費目の編集）と保存・復元をつなぐ (AC-01, AC-06, AC-07, AC-08, AC-09, AC-10, AC-11, AC-12, AC-13, AC-15, AC-16)
