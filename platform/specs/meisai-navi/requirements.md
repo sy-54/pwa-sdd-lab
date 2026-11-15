@@ -13,7 +13,7 @@
 - 表示する期間を、全期間と月ごとで切り替えられる
 - 節約ポイント（リボ・分割手数料、サブスク、コンビニ、デリバリー、外食、通信費など）が分かる
 - 明細の一覧を見られ、店ごとに費目を修正できる（同じ店名の明細すべてに効く）
-- 費目を自分で追加・改名できる
+- 費目を自分で追加・改名・削除できる
 - アプリを閉じて開き直しても、読み込んだ明細、費目、費目の修正が残る
 - 読み込んだファイルを個別に削除でき、すべて消すこともできる
 
@@ -35,6 +35,6 @@
 - 期間の切り替え：`data-testid="month-chip"`（`data-month` は `all` または `YYYY-MM`）
 - 合計：`data-testid="total"`。費目の行：`data-testid="category-row"`（`data-cat` に費目ID）。その中に `"category-amount"`、`"category-share"`
 - 節約ポイント：`data-testid="tip"`。節約額の目安の合計：`data-testid="tip-total"`
-- 費目の編集：新しい費目名 `data-testid="category-name"`（`input`）、追加 `data-testid="category-add"`
+- 費目の編集：新しい費目名 `data-testid="category-name"`（`input`）、追加 `data-testid="category-add"`、削除 `data-testid="category-delete"`
 - 明細の行：`data-testid="tx-row"`。その中に `"tx-name"`、`"tx-amount"`、`"tx-category"`
 - 金額の表示（`total`、`category-amount`、`tx-amount`）は、数字と3桁区切りのカンマのみ（例 `1,200`）。割合は小数1桁と `%`（例 `24.2%`）
