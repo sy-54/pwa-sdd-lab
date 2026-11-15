@@ -5,14 +5,14 @@
   "stakeholderModel": "sonnet",
   "finishedAt": "2026-11-14T11:52:02.172Z",
   "acceptance": {
-    "passed": 8,
-    "total": 10,
+    "passed": 9,
+    "total": 11,
     "failed": [
       "[意図] 不正な金額（空・0・負・小数・文字）は追加されず、トーストで知らせる",
       "[意図] 月が変わると、一覧も合計も今月の分だけになる"
     ]
   },
-  "passRate": 0.8,
+  "passRate": 0.8181818181818182,
   "lintErrors": 0,
   "lintIssues": [],
   "ownTests": {
@@ -106,5 +106,6 @@
       "tokensOut": 4541,
       "durationMs": 51846
     }
-  ]
+  ],
+  "regradedAt": "2026-11-15T03:43:36.600Z"
 }

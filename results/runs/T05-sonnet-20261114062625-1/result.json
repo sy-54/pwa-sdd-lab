@@ -5,13 +5,13 @@
   "stakeholderModel": "sonnet",
   "finishedAt": "2026-11-14T06:39:01.985Z",
   "acceptance": {
-    "passed": 9,
-    "total": 10,
+    "passed": 10,
+    "total": 11,
     "failed": [
       "[意図] 月が変わると、一覧も合計も今月の分だけになる"
     ]
   },
-  "passRate": 0.9,
+  "passRate": 0.9090909090909091,
   "lintErrors": 0,
   "lintIssues": [],
   "ownTests": {
@@ -96,5 +96,6 @@
       "tokensOut": 4068,
       "durationMs": 61087
     }
-  ]
+  ],
+  "regradedAt": "2026-11-15T03:44:21.751Z"
 }

@@ -86,10 +86,14 @@ test('[意図] 不正な金額（空・0・負・小数・文字）は追加さ�
   await expect(page.getByTestId('total')).toHaveText('0');
 });
 
-test('[意図] 追加後は金額欄が空になり、分類は直前の選択のまま。最初の分類は食費', async ({ page }) => {
+test('[意図] 最初の分類は食費。追加後は金額欄が空になる', async ({ page }) => {
   await expect(page.getByTestId('category')).toHaveValue('food');
   await add(page, '300', 'transport');
   await expect(page.getByTestId('amount')).toHaveValue('');
+});
+
+test('追加した後も、分類は直前の選択のまま（要求の Should）', async ({ page }) => {
+  await add(page, '300', 'transport');
   await expect(page.getByTestId('category')).toHaveValue('transport');
 });
 

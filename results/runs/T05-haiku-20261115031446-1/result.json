@@ -6,13 +6,13 @@
   "rev": "565479a",
   "finishedAt": "2026-11-15T03:23:52.921Z",
   "acceptance": {
-    "passed": 9,
-    "total": 10,
+    "passed": 10,
+    "total": 11,
     "failed": [
-      "[意図] 追加後は金額欄が空になり、分類は直前の選択のまま。最初の分類は食費"
+      "追加した後も、分類は直前の選択のまま（要求の Should）"
     ]
   },
-  "passRate": 0.9,
+  "passRate": 0.9090909090909091,
   "lintErrors": 0,
   "lintIssues": [],
   "ownTests": {
@@ -97,5 +97,6 @@
       "tokensOut": 3888,
       "durationMs": 35608
     }
-  ]
+  ],
+  "regradedAt": "2026-11-15T03:44:11.965Z"
 }
