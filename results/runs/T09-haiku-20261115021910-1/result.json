@@ -1,0 +1,98 @@
+{
+  "id": "T09-haiku-20261115021910-1",
+  "task": "T09-shopping",
+  "model": "haiku",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-15T02:28:33.607Z",
+  "acceptance": {
+    "passed": 13,
+    "total": 13,
+    "failed": []
+  },
+  "passRate": 1,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 6,
+  "docLines": {
+    "spec.md": 130,
+    "design.md": 35,
+    "tasks.md": 10
+  },
+  "costUsd": 0.7459,
+  "tokensIn": 2557478,
+  "tokensOut": 46118,
+  "minutes": 8.8,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0480912,
+      "tokensIn": 54713,
+      "tokensOut": 2298,
+      "durationMs": 24942
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.07858800000000002,
+      "tokensIn": 183611,
+      "tokensOut": 6310,
+      "durationMs": 62088
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0557798,
+      "tokensIn": 137237,
+      "tokensOut": 3537,
+      "durationMs": 36720
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0446094,
+      "tokensIn": 76927,
+      "tokensOut": 3276,
+      "durationMs": 31441
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1602184,
+      "tokensIn": 566818,
+      "tokensOut": 11944,
+      "durationMs": 98325
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.2803361999999999,
+      "tokensIn": 1316011,
+      "tokensOut": 13767,
+      "durationMs": 228658
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0782759,
+      "tokensIn": 222161,
+      "tokensOut": 4986,
+      "durationMs": 46554
+    }
+  ]
+}

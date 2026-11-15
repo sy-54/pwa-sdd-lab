@@ -1,0 +1,101 @@
+{
+  "id": "T07-haiku-20261115023203-1",
+  "task": "T07-flashcards",
+  "model": "haiku",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-15T02:40:27.087Z",
+  "acceptance": {
+    "passed": 8,
+    "total": 10,
+    "failed": [
+      "「まだ」のカードは覚えるまで繰り返し出て、結果は1回で覚えた枚数",
+      "[意図] 登録した順に出題され、「まだ」のカードは列の最後に回る"
+    ]
+  },
+  "passRate": 0.8,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 6,
+  "docLines": {
+    "spec.md": 149,
+    "design.md": 35,
+    "tasks.md": 14
+  },
+  "costUsd": 0.712,
+  "tokensIn": 1979103,
+  "tokensOut": 52541,
+  "minutes": 7.7,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.043698799999999996,
+      "tokensIn": 74736,
+      "tokensOut": 3013,
+      "durationMs": 32372
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.19026849999999998,
+      "tokensIn": 394150,
+      "tokensOut": 18251,
+      "durationMs": 148120
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.048464099999999996,
+      "tokensIn": 100626,
+      "tokensOut": 2776,
+      "durationMs": 29737
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0552685,
+      "tokensIn": 135054,
+      "tokensOut": 3762,
+      "durationMs": 36142
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.18055450000000003,
+      "tokensIn": 615673,
+      "tokensOut": 13451,
+      "durationMs": 105932
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1417958,
+      "tokensIn": 537575,
+      "tokensOut": 8091,
+      "durationMs": 77811
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.0519657,
+      "tokensIn": 121289,
+      "tokensOut": 3197,
+      "durationMs": 31201
+    }
+  ]
+}

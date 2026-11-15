@@ -27,3 +27,4 @@
 - 学習画面 `study-view`（学習中だけ表示）：表 `study-front`、裏 `study-back`（めくるまで非表示）、`flip`、`know`（覚えた）、`again`（まだ）
 - 進み具合 `study-progress`：`覚えた枚数/全体の枚数`（例 `2/5`）
 - 結果 `study-result`（学習が終わったときだけ表示）：`result-known`（1回で覚えた枚数。数字のみ）、`study-finish`（一覧へ戻る）
+- めくる前（裏が非表示の間）に `know`／`again` を押しても何も起きない（押せない実装でもよい）

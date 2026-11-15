@@ -1,0 +1,98 @@
+{
+  "id": "T09-sonnet-20261115020730-1",
+  "task": "T09-shopping",
+  "model": "sonnet",
+  "stakeholderModel": "sonnet",
+  "finishedAt": "2026-11-15T02:18:42.196Z",
+  "acceptance": {
+    "passed": 13,
+    "total": 13,
+    "failed": []
+  },
+  "passRate": 1,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 0,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 9,
+  "docLines": {
+    "spec.md": 83,
+    "design.md": 45,
+    "tasks.md": 14
+  },
+  "costUsd": 2.803,
+  "tokensIn": 3951455,
+  "tokensOut": 44418,
+  "minutes": 10.6,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1835759,
+      "tokensIn": 72849,
+      "tokensOut": 2471,
+      "durationMs": 37375
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.27681989999999995,
+      "tokensIn": 215162,
+      "tokensOut": 6081,
+      "durationMs": 88077
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.23406609999999997,
+      "tokensIn": 203684,
+      "tokensOut": 4107,
+      "durationMs": 61199
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.14460199999999998,
+      "tokensIn": 140271,
+      "tokensOut": 1994,
+      "durationMs": 33013
+    },
+    {
+      "phase": "impl",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 1.2818446000000001,
+      "tokensIn": 2428751,
+      "tokensOut": 19644,
+      "durationMs": 264420
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.45510909999999993,
+      "tokensIn": 635920,
+      "tokensOut": 6554,
+      "durationMs": 96460
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.22696899999999998,
+      "tokensIn": 254818,
+      "tokensOut": 3567,
+      "durationMs": 56267
+    }
+  ]
+}

@@ -110,7 +110,7 @@ test('[意図] 登録した順に出題され、「まだ」のカードは列�
   await expect(page.getByTestId('result-known')).toHaveText('2');
 });
 
-test('[意図] めくる前は「覚えた」「まだ」を押せない', async ({ page }) => {
+test('めくる前は「覚えた」「まだ」を押せない（UI契約）', async ({ page }) => {
   await addAll(page);
   await page.getByTestId('study-start').click();
   const f = await front(page);
