@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>明細節約ナビ</title>
+    <link rel="stylesheet" href="../../sdk/sdk.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main data-testid="app-root">
+      <div class="months" id="months" role="group" aria-label="表示する月"></div>
+
+      <div class="card" data-testid="empty-guide" hidden>
+        <p>まだ明細がありません。楽天e-NAVIの利用明細CSVを読み込むと、費目ごとの割合と節約ポイントが表示されます。</p>
+        <button data-testid="go-import">CSVを読み込む</button>
+      </div>
+
+      <section id="view-home" class="view"></section>
+      <section id="view-tips" class="view" hidden></section>
+      <section id="view-list" class="view" hidden>
+        <div class="row">
+          <input class="grow" data-testid="tx-search" type="search" placeholder="店名で探す" aria-label="店名で探す" autocomplete="off" />
+          <select class="grow" data-testid="tx-filter" aria-label="費目でしぼる"></select>
+        </div>
+        <div id="tx-list"></div>
+      </section>
+
+      <section id="view-data" class="view" hidden>
+        <div class="card">
+          <h2>CSVを読み込む</h2>
+          <ol class="steps">
+            <li>楽天e-NAVIにログインし、「ご利用明細」を開く</li>
+            <li>見たい月を選び、明細のCSVをダウンロードする</li>
+            <li>下のボタンからそのファイルを選ぶ（複数月まとめて選べます）</li>
+          </ol>
+          <label class="button filepick">CSVファイルを選ぶ
+            <input data-testid="csv-file" type="file" accept=".csv,text/csv,text/comma-separated-values" multiple />
+          </label>
+          <p class="message" data-testid="import-message" role="status"></p>
+          <p class="muted small">明細はこの端末の中だけで処理し、外部には送信しません。</p>
+        </div>
+        <div class="card">
+          <h2>読み込み済み</h2>
+          <div id="files" class="lines"></div>
+          <button class="danger" data-testid="clear-all">すべて消す</button>
+        </div>
+        <div class="card">
+          <h2>費目の編集</h2>
+          <p class="muted small">名前を書き換えると改名します。追加した費目は、明細で店ごとに割り当てて使います。</p>
+          <div id="cats" class="lines"></div>
+          <div class="row">
+            <input class="grow" data-testid="category-name" placeholder="新しい費目名" aria-label="新しい費目名" autocomplete="off" />
+            <button data-testid="category-add">追加</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="tabs" aria-label="画面の切り替え">
+      <button class="plain" data-testid="tab-home" data-tab="home">内訳</button>
+      <button class="plain" data-testid="tab-tips" data-tab="tips">節約</button>
+      <button class="plain" data-testid="tab-list" data-tab="list">明細</button>
+      <button class="plain" data-testid="tab-data" data-tab="data">データ</button>
+    </nav>
+
+    <div class="sheet-bg" id="sheet" hidden>
+      <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+        <h2 id="sheet-title"></h2>
+        <p class="muted small">選んだ費目は、同じ店名の明細すべてに適用されます。</p>
+        <div class="options" id="options"></div>
+        <button class="secondary" id="sheet-close">閉じる</button>
+      </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
