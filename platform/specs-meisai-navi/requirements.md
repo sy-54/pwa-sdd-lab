@@ -38,7 +38,6 @@
 - 費目の編集：新しい費目名 `data-testid="category-name"`（`input`）、追加 `data-testid="category-add"`、削除 `data-testid="category-delete"`
 - 明細の行：`data-testid="tx-row"`。その中に `"tx-name"`、`"tx-amount"`、`"tx-category"`
 - 金額の表示（`total`、`category-amount`、`tx-amount`）は、数字と3桁区切りのカンマのみ（例 `1,200`）。割合は小数1桁と `%`（例 `24.2%`）
-
 ## 改訂履歴
 - 変わった点：費目を固定にせず、追加・改名・削除できるようにした（D2、D5）。「その他」は削除できない
 - 変わった点：同じファイル名のCSVは置き換える（D1）。節約ポイントに仮定つきの目安額を出す（D3）。明細0件のときはサンプルを出さず案内だけにする（D4）
