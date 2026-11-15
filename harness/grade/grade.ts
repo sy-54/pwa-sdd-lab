@@ -82,3 +82,11 @@ export function leaked(logsDir: string): boolean {
   }
   return false;
 }
+
+/** 実行結果に影響する手順書・雛形・lint・ランナー・SDK の版。改善の前後を比べるために記録する */
+const REV_PATHS = ['sdd', 'harness/template', 'harness/lint', 'harness/stakeholder', 'harness/run.ts', 'platform/sdk'];
+export function sddRev(before?: Date): { rev: string; date: string; subject: string } {
+  const args = ['log', '-1', '--format=%h%x09%cI%x09%s', ...(before ? [`--before=${before.toISOString()}`] : []), '--', ...REV_PATHS];
+  const [rev = '?', date = '', subject = ''] = spawnSync('git', args, { cwd: REPO, encoding: 'utf8' }).stdout.trim().split('\t');
+  return { rev, date, subject };
+}

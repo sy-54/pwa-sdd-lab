@@ -6,7 +6,7 @@ import { join } from 'node:path';
 import { format, lint, type Phase } from './lint/lint.ts';
 import { runClaude, type ClaudeResult } from './lib/claude.ts';
 import { answer } from './stakeholder/answer.ts';
-import { REPO, docLines, freePort, leaked, lintWork, runAcceptance, sh } from './grade/grade.ts';
+import { REPO, docLines, freePort, leaked, lintWork, runAcceptance, sddRev, sh } from './grade/grade.ts';
 
 const MAX_ATTEMPTS = 3; // 1フェーズあたりの試行回数（初回＋手戻り2回）
 const MAX_QA_ROUNDS = 2;
@@ -84,6 +84,7 @@ async function runOne(taskName: string, model: string, n: number, stakeholderMod
   const logs = join(out, 'logs');
   mkdirSync(logs, { recursive: true });
   prepare(work, taskDir);
+  const rev = sddRev().rev; // 開始時点の版（実行中に手順書を変えても、この実行の版は変わらない）
   const env = { PORT: String(await freePort()) };
   const rules = readFileSync(join(work, 'CLAUDE.md'), 'utf8');
   const phases: PhaseLog[] = [];
@@ -221,7 +222,7 @@ async function runOne(taskName: string, model: string, n: number, stakeholderMod
   const e2e = sh(work, 'npm run e2e', env);
   const sum = (k: 'costUsd' | 'tokensIn' | 'tokensOut' | 'durationMs') => phases.reduce((s, p) => s + p[k], 0);
   const result = {
-    id, task: taskName, model, stakeholderModel, finishedAt: new Date().toISOString(),
+    id, task: taskName, model, stakeholderModel, rev, finishedAt: new Date().toISOString(),
     acceptance,
     passRate: acceptance.total ? acceptance.passed / acceptance.total : 0,
     lintErrors: lintIssues.length,
