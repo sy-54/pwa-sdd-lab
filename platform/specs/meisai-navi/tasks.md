@@ -5,7 +5,7 @@
 > 完了条件は `npm run check:platform`（build・単体・E2E）の全件通過と、実物の楽天CSVを使った iPhone 実機での確認。
 
 - [x] T01: apps/meisai-navi の manifest.json・index.html（4画面の枠とUI契約の data-testid）・style.css を置き、build の manifest 検証を通す (setup)
-- [ ] T02: format.js の yen／share／monthLabel を単体テストから作る (AC-01, AC-02)
+- [x] T02: format.js の yen／share／monthLabel を単体テストから作る (AC-01, AC-02)
 - [ ] T03: csv.js の parseCsv／readStatement／decodeText を単体テストから作る。Shift_JIS のバイト列を読めることを確かめる (AC-01, AC-12, AC-13)
 - [ ] T04: classify.js の normalize／shopKey／autoClassify とキーワード表を単体テストから作る (AC-02)
 - [ ] T05: model.js の initialState／repairState／putFile／removeFile／setRule／resolveRows／summarize を単体テストから作る (AC-02, AC-03, AC-05, AC-06, AC-07, AC-08)
