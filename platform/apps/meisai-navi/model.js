@@ -105,3 +105,40 @@ export function summarize(rows, cats) {
   const byMonth = monthsOf(rows).map((ym) => ({ ym, total: rows.filter((r) => r.ym === ym).reduce((t, r) => t + r.a, 0) }));
   return { total, count: rows.length, byCat, shops, byMonth };
 }
+
+/**
+ * @typedef {{ ok: true, state: State } | { ok: false, state: State, reason: 'empty' | 'duplicate' | 'limit' | 'missing' | 'other' }} Result
+ */
+
+/** 費目名を整える。前後の空白を除き、20文字で切る。 @param {string} name */
+const cleanName = (name) => [...String(name).trim()].slice(0, NAME_MAX).join('');
+
+/** 費目を追加する。 @param {State} state @param {string} name @returns {Result} */
+export function addCategory(state, name) {
+  const n = cleanName(name);
+  if (!n) return { ok: false, state, reason: 'empty' };
+  if (state.cats.some((c) => c.name === n)) return { ok: false, state, reason: 'duplicate' };
+  if (state.cats.length >= MAX_CATEGORIES) return { ok: false, state, reason: 'limit' };
+  const used = new Set(state.cats.map((c) => c.color));
+  let color = 0;
+  while (used.has(color)) color++;
+  const next = Math.max(0, ...state.cats.map((c) => Number(/^c(\d+)$/.exec(c.id)?.[1] ?? 0))) + 1;
+  return { ok: true, state: { ...state, cats: [...state.cats, { id: `c${next}`, name: n, color }] } };
+}
+
+/** 費目を改名する。 @param {State} state @param {string} id @param {string} name @returns {Result} */
+export function renameCategory(state, id, name) {
+  const n = cleanName(name);
+  if (!state.cats.some((c) => c.id === id)) return { ok: false, state, reason: 'missing' };
+  if (!n) return { ok: false, state, reason: 'empty' };
+  if (state.cats.some((c) => c.id !== id && c.name === n)) return { ok: false, state, reason: 'duplicate' };
+  return { ok: true, state: { ...state, cats: state.cats.map((c) => (c.id === id ? { ...c, name: n } : c)) } };
+}
+
+/** 費目を削除する。その費目への店ごとの修正も消す。other は削除できない。 @param {State} state @param {string} id @returns {Result} */
+export function deleteCategory(state, id) {
+  if (id === 'other') return { ok: false, state, reason: 'other' };
+  if (!state.cats.some((c) => c.id === id)) return { ok: false, state, reason: 'missing' };
+  const rules = Object.fromEntries(Object.entries(state.rules).filter(([, cat]) => cat !== id));
+  return { ok: true, state: { ...state, cats: state.cats.filter((c) => c.id !== id), rules } };
+}
