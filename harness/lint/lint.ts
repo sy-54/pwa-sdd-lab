@@ -205,6 +205,21 @@ function lintContractFiles(file: string, lines: string[], rootDir: string, issue
   });
 }
 
+/** requirements.md の UI契約にあるファイルのパスと data-testid が、spec.md に写されているか */
+function lintContractCopy(req: string[], spec: string[], issues: Issue[]) {
+  const text = spec.join('\n');
+  let inContract = false;
+  req.forEach((l, i) => {
+    if (l.startsWith('## ')) inContract = l.startsWith('## UI契約');
+    if (!inContract) return;
+    for (const m of l.matchAll(/`([^`]+)`/g)) {
+      const token = m[1].match(/^(?:data-testid=)?"([^"]+)"$/)?.[1] ?? (m[1].startsWith('apps/') ? m[1] : null);
+      if (token && !text.includes(token))
+        issues.push({ file: 'spec.md', line: 1, rule: 'contract-copy', msg: `requirements.md:${i + 1} の UI契約にある ${token} が spec.md にない（「画面と操作」に、パスと data-testid をそのまま写す）` });
+    }
+  });
+}
+
 export interface LintOptions {
   dir: string; // requirements.md / spec.md / design.md / tasks.md があるディレクトリ
   phase: Phase; // このフェーズまでの成果物を検査する
@@ -228,6 +243,7 @@ export function lint(opts: LintOptions): Issue[] {
   if (!has('spec')) return issues;
   const spec = load('spec.md');
   const acs = spec ? lintSpec('spec.md', spec, issues) : [];
+  if (req && spec) lintContractCopy(req, spec, issues);
   if (has('design')) {
     const d = load('design.md');
     if (d) lintDesign('design.md', d, acs, issues);

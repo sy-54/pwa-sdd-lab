@@ -5,6 +5,7 @@
 > 未決事項なし。
 
 ## 画面と操作
+- 置くファイル：`apps/counter/index.html`。ルート要素は `data-testid="app-root"`
 - 現在値（`count`）を中央に大きく表示する
 - `inc` で +1、`dec` で −1、`reset` で 0 にする
 

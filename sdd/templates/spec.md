@@ -5,6 +5,7 @@
 > <未決事項の有無と、レビューで見てほしい点>
 
 ## 画面と操作
+- 置くファイル：<UI契約のパスをそのまま写す。例 `apps/<id>/index.html`、`apps/<id>/manifest.json`>
 - <見えるもの、操作、data-testid>
 
 ## 振る舞い

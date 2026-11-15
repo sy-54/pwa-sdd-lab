@@ -78,6 +78,10 @@ describe('個別ルール', () => {
     expect(rules(root, 'e2e')).toContain('requirements.md:contract-file');
     expect(rules(root, 'tasks')).not.toContain('requirements.md:contract-file');
   });
+  it('UI契約のパスや testid を spec に写していない', () => {
+    const root = mutate('specs/spec.md', (s) => s.replace('apps/counter/index.html', 'カウンタの画面'));
+    expect(rules(root, 'spec')).toContain('spec.md:contract-copy');
+  });
   it('ファイル欠落', () => {
     const root = mutate('specs/design.md', (s) => s);
     rmSync(join(root, 'specs/design.md'));
