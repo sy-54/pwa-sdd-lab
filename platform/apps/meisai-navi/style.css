@@ -51,14 +51,14 @@ button.plain { background: none; color: inherit; border: 0; border-radius: 0; pa
 .trend i { display: block; width: 100%; max-width: 48px; min-height: 3px; border-radius: 4px 4px 0 0; background: var(--border); }
 .trend button[aria-pressed='true'] i { background: var(--fg); }
 
-.hero { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.card.hero { background: var(--fg); color: var(--bg); border-color: var(--fg); }
 .hero .big2 { font-size: clamp(2rem, 10vw, 2.6rem); font-weight: 700; line-height: 1.2; }
 .hero p { font-size: 0.8rem; opacity: 0.8; }
-.tip { border-left: 5px solid var(--muted); }
-.tip[data-level='crit'] { border-left-color: var(--danger); }
-.tip[data-level='warn'] { border-left-color: var(--warn); }
+.card.tip { border-left: 5px solid var(--muted); }
+.card.tip[data-level='crit'] { border-left-color: var(--danger); }
+.card.tip[data-level='warn'] { border-left-color: var(--warn); }
 .tip .pill { flex: none; font-size: 0.75rem; font-weight: 700; border: 1px solid currentColor; border-radius: 4px; padding: 0 6px; color: var(--muted); }
-.tip[data-level='crit'] .pill { color: var(--danger); }
+.card.tip[data-level='crit'] .pill { color: var(--danger); }
 .tip p { color: var(--muted); font-size: 0.9rem; }
 .tip .sub { font-size: 0.85rem; }
 .tip .sub > * { padding: 3px 0; border-top: 1px dashed var(--border); }
