@@ -1,0 +1,99 @@
+{
+  "id": "T02-sonnet-20261115032905-1",
+  "task": "T02-todo",
+  "model": "sonnet",
+  "stakeholderModel": "sonnet",
+  "rev": "96976a4",
+  "finishedAt": "2026-11-15T03:41:42.285Z",
+  "acceptance": {
+    "passed": 9,
+    "total": 9,
+    "failed": []
+  },
+  "passRate": 1,
+  "lintErrors": 0,
+  "lintIssues": [],
+  "ownTests": {
+    "unit": true,
+    "e2e": true
+  },
+  "rework": 1,
+  "gatesFailed": [],
+  "qaRounds": 1,
+  "commits": 10,
+  "docLines": {
+    "spec.md": 67,
+    "design.md": 31,
+    "tasks.md": 14
+  },
+  "costUsd": 3.2006,
+  "tokensIn": 4143732,
+  "tokensOut": 48431,
+  "minutes": 12.3,
+  "leaked": false,
+  "phases": [
+    {
+      "phase": "spec-questions",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1849912,
+      "tokensIn": 89718,
+      "tokensOut": 2264,
+      "durationMs": 39200
+    },
+    {
+      "phase": "spec",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.2785441,
+      "tokensIn": 189117,
+      "tokensOut": 6763,
+      "durationMs": 86390
+    },
+    {
+      "phase": "design",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.152387,
+      "tokensIn": 141278,
+      "tokensOut": 2454,
+      "durationMs": 40142
+    },
+    {
+      "phase": "tasks",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1364705,
+      "tokensIn": 117798,
+      "tokensOut": 2092,
+      "durationMs": 34995
+    },
+    {
+      "phase": "impl",
+      "attempts": 2,
+      "gate": true,
+      "costUsd": 1.6971717000000002,
+      "tokensIn": 2652634,
+      "tokensOut": 21765,
+      "durationMs": 307347
+    },
+    {
+      "phase": "e2e",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.5641429,
+      "tokensIn": 780573,
+      "tokensOut": 9473,
+      "durationMs": 174640
+    },
+    {
+      "phase": "feedback",
+      "attempts": 1,
+      "gate": true,
+      "costUsd": 0.1869086,
+      "tokensIn": 172614,
+      "tokensOut": 3620,
+      "durationMs": 54300
+    }
+  ]
+}
